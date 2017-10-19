@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="dots">
+    <canvas id="dot"></canvas>
+  </div>
+  <script>
+    var myCan = {}
+    var initCanvas=function(){
+      var mycanv=document.getElementById('dot')
+      myCan.canvas=mycanv
+      myCan.canvas.width=document.querySelector('.dots').clientWidth
+      myCan.canvas.height=document.querySelector('.dots').clientHeight
+      myCan.WINDOW_WIDTH=mycanv.clientWidth
+      myCan.WINDOW_HEIGHT=mycanv.clientHeight
+      myCan.ctx=mycanv.getContext('2d')
+      myCan.balls=[]
+      update()
+      requestAnimationFrame(this.step)
+    }
+    var update=function(){
+      const colors = ['rgba(255,255,255,.4)', 'rgba(202,169,52,.3)', 'rgba(202,169,52,.2)', 'rgba(202,167,51,.5)', 'rgba(202,167,51,.6)', 'rgba(202,167,51,.1)', 'rgba(255,255,255,.2)', 'rgba(196,167,57,.7)', 'rgba(255,255,255,.6)']
+      const RADIUS = [1, 2, 2, 2, 2, 2, 4, 7]
+      for(var i=0;i<40;i++){
+        var aBall={
+          x: Math.ceil(Math.random()*myCan.WINDOW_WIDTH),
+          y: Math.ceil(Math.random()*myCan.WINDOW_HEIGHT),
+          r: Math.ceil(Math.random()*RADIUS[Math.floor(Math.random()*RADIUS.length)]),
+          vy: Math.random()/3,
+          color: colors[Math.floor(Math.random()*colors.length)]
+        }
+        this.myCan.balls.push(aBall)
+      }
+    }
+    var render=function(balls){
+      myCan.ctx.clearRect(0,0,myCan.WINDOW_WIDTH,myCan.WINDOW_HEIGHT)
+      for(var j=0;j<balls.length;j++){
+        myCan.ctx.fillStyle=balls[j].color
+        myCan.ctx.beginPath()
+        myCan.ctx.arc(balls[j].x, balls[j].y,balls[j].r,0,2*Math.PI,true)
+        myCan.ctx.closePath()
+        myCan.ctx.fill()
+      }
+    }
+    var updateBall = function () {
+      var balls=myCan.balls
+      for(var i=0;i<balls.length;i++){
+        myCan.balls[i].y += -myCan.balls[i].vy
+        if(balls[i].y <= -myCan.balls[i].r){
+          myCan.balls[i].y = myCan.balls[i].r + document.body.clientHeight
+        }
+      }
+    }
+    var step = function () {
+      render(myCan.balls)
+      updateBall()
+      requestAnimationFrame(step)
+    }
+    initCanvas()
+  </script>
+</body>
+</html>

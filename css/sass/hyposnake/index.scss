@@ -1,0 +1,48 @@
+.content { position: relative; }
+
+div {
+  animation: anim 1s infinite alternate cubic-bezier(0.32, 1.23, 0.83, 1.23);
+  border-radius: 50%;
+  position: absolute;
+  transform-origin: 0 0;
+  opacity: 0.5;
+  
+  &:nth-child(odd) { mix-blend-mode: screen; }
+}
+
+$num: 360;
+
+@for $n from 1 through $num {
+  div:nth-child(#{$n}) {
+    animation-name: anim-#{$n};
+    animation-delay: $n * 0.01s;
+    background: hsl($n, 95, 50);
+    transform: 
+      rotate($n * 3deg) 
+      translate3d($n * 0.025vw, $n * 0.025vw, 0);
+
+    height: $n * 0.05vw;
+    width: $n * 0.05vw;
+    z-index: $num - $n;
+  }
+  
+  @keyframes anim-#{$n} {
+    100% {
+      filter: hue-rotate(180deg);
+      transform: 
+        rotate($n * 1deg) 
+        translate3d($n * 0.0125vw, $n * 0.03vw, 0);
+    }
+  }
+}
+
+//=== Pen styling, ignore
+body {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}

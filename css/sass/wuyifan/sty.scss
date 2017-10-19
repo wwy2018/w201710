@@ -1,0 +1,43 @@
+body{
+  padding: 200px
+}
+img{
+  display: block
+}
+.hide{
+  opacity: 0
+}
+.div1{
+  width: 100%;
+}
+.div2{
+  width: 100%;
+}
+.img1{
+  @for $i from 1 to 25 {
+    &:nth-child(#{$i}){
+      width: $i * 2px + 10px;
+      float: left;
+      margin-left: -($i * 2px + 10px)/2;
+      animation: img-#{$i} 4s ease-in-out $i*0.4s forwards
+    }
+  }
+}
+.img2{
+  @for $i from 1 to 13 {
+    &:nth-child(#{$i}){
+      width: $i * 5px + 55px;
+      float: right;
+      margin-right: -($i * 2px + 60px)/2;
+      animation: img-#{$i} 5s ease-in-out $i*0.5s + 10s forwards
+    }
+  }
+}
+@for $i from 1 through 25{
+  @keyframes img-#{$i} {
+    0%{opacity: 1}
+    100%{
+      opacity: 0
+    }
+  }
+}

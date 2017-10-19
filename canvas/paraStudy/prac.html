@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="container" class="container">
+		<div id="scene" class="scene">
+			<div data-depth="1.00"><img src="images/layer1.png"></div>
+			<div data-depth="0.80"><img src="images/layer2.png"></div>
+			<div data-depth="0.60"><img src="images/layer3.png"></div>
+			<div data-depth="0.40"><img src="images/layer4.png"></div>
+			<div data-depth="0.20"><img src="images/layer5.png"></div>
+			<div data-depth="0.00"><img src="images/layer6.png"></div>
+		</div>
+	</div>
+
+	<!-- Scripts -->
+	<script src="parallax.js"></script>
+	<script>
+
+	// Pretty simple huh?
+	var scene = document.getElementById('scene');
+	var parallax = new Parallax(scene);
+
+	</script>
+</body>
+</html>

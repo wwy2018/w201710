@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  // 1. 创建<iframe>元素
+  var iframe = document.createElement('iframe');
+  // 2. 将CSS，HTML字符串转换为Blob对象
+  var html = '<div class="container"\>aaa<\/div\>'
+  var blob = new Blob([html
+  ], {
+    'type': 'text/html'
+  });
+  console.log(blob)
+  // 3. 使用URL.createObjectURL()方法将...
+  iframe.src = URL.createObjectURL(blob);
+  document.body.appendChild(iframe)
+</script>
+</body>
+</html>

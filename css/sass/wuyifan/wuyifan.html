@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="sty.css">
+  <style lang="">
+    
+  </style>
+</head>
+<body>
+  <div class="div1"></div>
+  <div class="div2"></div>
+  <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+    for (var i = 0;i<24;i++){
+      var img = document.createElement('img')
+      img.classList.add('img1')
+      if (i > 0) {
+        img.classList.add('hide')
+      }
+      $('.div1').append(img)
+      if (i%2 === 0) {
+        img.src = 'w1.png'        
+      } else {
+        img.src = 'w2.png'
+      }
+    }
+    for (var i = 0; i<12; i++) {
+      var img = document.createElement('img')
+      img.classList.add('img2')
+      img.classList.add('hide')
+      $('.div2').append(img)
+      if (i%2 === 0) {
+        img.src = 'w1.png'        
+      } else {
+        img.src = 'w2.png'
+      }
+    }
+  </script>
+</body>
+</html>

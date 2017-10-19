@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .div{
+      width: 200px;
+      overflow: hidden;
+    }
+    .div1{
+      width: 600px;
+      column-count: 4;
+      column-width: 200px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="div">
+  <div class="div1">上面第4点“高宽完美限制”即是起点中文网移动web app阅读页水平阅读布局实现原理，差别就是宽高尺寸不一样，不知赘述。这里顺便提一下开发时候的番外小故事：
+      
+      原本滑页是通过改变容器原生的scrollLeft值来实现的，而不是translateX位移，好处在于不要担心边界判断的问题。但是后来发现有两点不足：
+      
+      1. 个别Android设备下，滑动不是很流畅；
+      2. 这个不足是最为致命的不足，那就是在chrome55之后版本CSS3 column布局出现了非常严重的bug, 容器overflow:hidden/auto之后，后面第3栏开始往后的分栏会直接无法显示；
+      
+      于是，最后选择了使用translateX进行位移。
+      
+      还别说，真有不少用户使用水平浏览模式，或许是跟原生APP交互形式相一致的原因吧。
+      
+      补充于2017年3月13日
+      已经有多个小伙伴询问如何判断已经滑动到底部，很简单啊，设置overflow:hidden容器的scrollWidth值就是子元素的宽度。</div>
+  </div>
+</body>
+</html>

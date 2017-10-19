@@ -1,0 +1,27 @@
+.electric-loader {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  margin: auto;
+  width: 80%;
+  width: 80vw;
+  height: auto;
+  max-width: 600px;
+}
+
+.electric-loader path { 
+  fill: none;
+  stroke: #A5F2E7; 
+  stroke-width: 0.6; 
+
+  stroke-dasharray: 300;
+  stroke-dashoffset: -300;
+  
+  animation: 
+    stroke-anim 2s steps(40) infinite, 
+    stroke-color 0.6s steps(10)  alternate infinite;
+}
+
+@keyframes stroke-anim { to { stroke-dashoffset: 0; } }
+@keyframes stroke-color { to { stroke: #49BEB7; } }
+
+html { height: 100%; width: 100%; background: #000; }

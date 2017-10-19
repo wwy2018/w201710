@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/deepstream.io-client-js/2.1.1/deepstream.js"></script>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <div id="app"></div>
+  <script>
+    function getTarget (node = document.body) {
+      if (node === true) {
+        return document.body
+      }
+      return node instanceof window.Node ? node : document.querySelector(node)
+    }
+    const homes = new Map()
+    new Vue({
+      el: '#app',
+      directives: {
+        test: {
+          inserted (el, {value}, vnode) {
+            const {parentNode} = el
+            const home = document.createComment('')
+            let hasMovedOut = false
+            if (value !== false) {
+              parentNode.replaceChild(home, el)
+              getTarget(value).appendChild(el)
+              hasMovedOut = true
+            }
+            if (!homes.has(el)) homes.set(el, {parentNode, home, hasMovedOut})
+          },
+          componentUpdated (el, {value}) {
+            const {parentNode, home, hasMovedOut} = homes.get(el)
+            if (!hasMovedOut && value) {
+              //
+            }
+          }
+        }
+      }
+    })
+  </script>
+</body>
+</html>

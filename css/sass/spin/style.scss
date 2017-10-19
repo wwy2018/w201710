@@ -1,0 +1,62 @@
+@function make-bands($bands: 10, $color1: black, $color2: white) {
+  $gradient: ();
+  $stop: 100 / $bands * 1%;
+  
+  @for $i from 1 through $bands {
+    $is-even: $i % 2 == 0;
+    $current: if($is-even, $color1, $color2);
+    $next: if($is-even, $color2, $color1);
+    
+    $gradient: append($gradient, $current $i * $stop, comma);
+    $gradient: append($gradient, $next $i * $stop + 1, comma);
+  }
+  
+  @return $gradient;
+}
+
+.spin {
+  background: radial-gradient(circle, make-bands()) 50% 50% / 66%;
+  border-radius: 50%;
+  border: 4px solid black;
+  width: 33vw;
+  height: 33vw;
+  position: relative;
+  
+  &::before,
+  &::after {
+    content:'';
+    display: block;
+    position: absolute;
+    
+    animation: spin 3s infinite linear;
+    background: radial-gradient(circle, make-bands(7)) 50% 50%;
+    border-radius: 50%;
+    width: 56%;
+    height: 56%;
+    will-change: transform;
+    mix-blend-mode: difference;
+  }
+  
+  &::before {
+    top: 0; left: 0;
+    transform-origin: bottom right;
+  }
+  
+  &::after {
+    bottom: 0; right: 0;
+    transform-origin: top left;
+  }
+}
+
+@keyframes spin {
+  100% { transform: rotate(359deg); }
+}
+
+//=== Pen styling, ignore
+body {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body{
+      background: black;
+    }
+    svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+    svg rect {
+      fill: none;
+      stroke: #F1F1F1;
+      stroke-width: 7px;
+      stroke-dasharray: 2000;
+      stroke-dashoffset: 2000;
+      animation: 4s animation-rect linear forwards; 
+    }
+    
+    @keyframes animation-rect {
+      from {
+        stroke-dashoffset: 2000;    
+      }
+      to {
+        stroke-dashoffset: 0;  
+      }
+    }
+    #circle circle{
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: 4s animation-rect linear forwards;       
+    }
+    svg line {
+  stroke: rgb(241, 241, 241);
+  stroke-width: 3px;  
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: 3s lines forwards;
+}
+
+@keyframes lines {
+  from {
+    stroke-dashoffset: 400;  
+  }
+  to {
+    stroke-dashoffset: -257;  
+  }
+}
+svg path {
+  stroke: #fff;
+  stroke-width: 3px;
+}
+
+@keyframes animation-text {
+  from {
+    stroke-dashoffset: 700;  
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;  
+    opacity: 1;
+  }
+}
+  </style>
+</head>
+<body>
+  <?xml version="1.0" standalone="no"?>
+  <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+  
+  <svg width="100%" height="100%" version="1.1"
+  xmlns="http://www.w3.org/2000/svg">
+  
+  <!-- <g id="bg">
+      <rect y="-0.432" fill="#FFFFFF" stroke="#000000" stroke-width="3" stroke-miterlimit="10" width="500" height="250.201"/>
+    </g>
+    <g stroke="green" fill="white" stroke-width="5" id="circle">
+        <circle cx="25" cy="25" r="15"/>
+        <circle cx="40" cy="25" r="15"/>
+        <circle cx="55" cy="25" r="15"/>
+        <circle cx="70" cy="25" r="15"/>
+      </g>
+      <g id="lines_1_">
+          <line fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" x1="-1.952" y1="250" x2="248.048" y2="0"/>
+          <line fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" x1="500" y1="0" x2="249.98" y2="250.021"/>
+          <line fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" x1="250" y1="125" x2="375.432" y2="-0.432"/>
+          <line fill="none" stroke="#000000" stroke-width="3" stroke-miterlimit="10" x1="250" y1="125" x2="125.231" y2="249.769"/>
+        </g> -->
+        <g>
+            <path d="M172.662,114.12l-5.854-10.949h-0.434l1.084,10.949v49.648h-8.455V86.694h4.77l36.315,50.624l5.637,10.406h0.542
+            l-1.192-10.406V87.887h8.455v77.074h-4.77L172.662,114.12z"/>
+        </g>
+  </svg>
+</body>
+</html>

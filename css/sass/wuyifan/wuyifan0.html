@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style lang="">
+    body{
+      padding: 200px;
+    }
+    img{
+      display: block;
+      width: 100%;
+      max-height: 100%;
+      float: left;
+    }
+    .div1{
+      width: 100px;
+      height: 200px;
+      display: flex;
+      animation: div 5s infinite;
+    }
+    .img1{
+      width: 20px;
+      height: 40px;
+      animation: show 2s 0 linear forwards;
+    }
+    .img2{
+      width: 30px;
+      height: 60px;
+      margin-left: -10px;
+      animation: show 2s 1s linear forwards;
+    }
+    .img3{
+      width: 40px;
+      height: 80px;
+      margin-left: -20px;
+      animation: show 2s 3s linear forwards;
+    }
+    .img4{
+      width: 50px;
+      height: 100px;
+      margin-left: -30px;
+      animation: show 2s 4s linear forwards;
+    }
+    .img5{
+      width: 60px;
+      height: 120px;
+      margin-left: -40px;
+      animation: show 2s 5s linear forwards;
+    }
+    .img6{
+      width: 70px;
+      height: 140px;
+      margin-left: -50px;
+      animation: show 2s 6s linear forwards;
+    }
+    @keyframes div{
+      0%{
+        transform: scale(1) translateX(0)
+      } 100% {
+        transform: scale(1.5) translateX(50px)
+      }
+    }
+    @keyframes show{
+      0%{opacity: 0}
+      50%{
+        opacity: 1
+      }
+      100%{
+        opacity: 0
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="div1">
+    <img src="w1.png" class="img1"/>
+     <img src="w2.png" class="img2"/>
+     <img src="w1.png" class="img3"/>
+    <img src="w2.png" class="img4"/>
+    <img src="w1.png" class="img5"/>
+    <img src="w2.png" class="img6"/>  
+    
+  </div>
+  <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+    
+  </script>
+</body>
+</html>

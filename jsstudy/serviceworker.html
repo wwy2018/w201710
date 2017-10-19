@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h3>一些提示信息</h3>
+  <ul>
+      <li>浏览器是否支持：<span id="isSupport"></span></li>
+      <li>service worker是否注册成功：<span id="isSuccess"></span></li>
+      <li>当前注册状态：<span id="state"></span></li>
+      <li>当前service worker状态：<span id="swState"></span></li>
+  </ul>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script>
+    // http://www.zhangxinxu.com/wordpress/2017/07/service-worker-cachestorage-offline-develop/
+    // 由于service worker的权限很高，所有的代码都需要是安全可靠的，所以只有https站点才可以使用service worker，当然localhost是一个特例
+    if ('serviceWorker' in navigator) {
+      $('#isSupport').text('support')
+      navigator.serviceWorker.register('./sw-demo-cache.js', {
+        scope: './'
+      }).then(function (registration) {
+        $('#isSuccess').text('success')
+        var serviceWorker
+        if (registration.installing) {
+          serviceWorker = registration.installing
+          $('#state').text('installing')
+        } else if (registration.waiting) {
+          serviceWorker = registration.waiting
+          $('#state').text('waiting')
+        } else if (registration.waiting) {
+          serviceWorker = registration.waiting
+          $('#state').text('active')
+        }
+        if (serviceWorker) {
+          $('#swState').text(serviceWorker.state)
+          serviceWorker.addEventListener('stateChange', function (e) {
+            $('#swState').append('&emsp;state is ' + e.target.state)
+          })
+        }
+      }).catch(function (error) {
+        $('#isSuccess').text('fail')
+      })
+    } else {
+      $('#isSupport').text('not support')
+    }
+  </script>
+</body>
+</html>
