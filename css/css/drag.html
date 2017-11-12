@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+                .demo{text-align:center;}
+		.top{text-align:center;}
+		.top img{margin:30px;border:dotted 1px pink;}
+		.body{display:flex;justify-content:center;}
+		.body div{margin:20px;width: 100px;height: 100px;border:solid 1px #000;}
+		.body div:nth-child(1){background:blue;}
+		.body div:nth-child(2){background:red;}
+		.body div:nth-child(3){background:green;}
+		.showBox{width:200px;height: 200px;border:dashed 1px blue;margin:0 auto;}
+	</style>
+</head>
+<body>
+	<div class="demo">
+               <h2>图片可拖拽</h2>
+		<div class="top">
+			<img src="http://cdn.attach.qdfuns.com/notes/pics/201703/27/105241ks8p90zmmtm8wn0d.jpg" alt="">
+			<img src="http://cdn.attach.qdfuns.com/notes/pics/201703/27/104945ockbmq2qd22rhudv.jpg" alt="">
+			<img src="http://cdn.attach.qdfuns.com/notes/pics/201703/27/104945eni5sxdyolosbn5y.png" alt="">
+		</div>
+                <h2>盒子可拖拽</h2>
+		<div class="body">
+			<div draggable="true"></div>
+			<div draggable="true"></div>
+			<div draggable="true"></div>
+		</div>
+		<div class="footer">
+                       <h2>拖拽到这里</h2>
+			<div class="showBox"></div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	window.onload = function(){
+		var moveDemo = null;
+		// 获取所有的div色块，为所有的色块添加拖拽事件
+		var divs = document.querySelectorAll(".body div");
+		for( i = 0; i < divs.length; i++ ){
+			divs[i].ondragstart = function(){
+				moveDemo = this;
+			}
+		};
+		// 获取所有的img图片，为所有的图片添加拖拽事件
+		var imgs = document.querySelectorAll(".top img");
+		for( i = 0; i < imgs.length; i++ ){
+			imgs[i].ondragstart = function(){
+				moveDemo = this;
+			};
+		};
+		// 获取最后展示的元素
+		var showBox = document.querySelector(".showBox");
+		// 开启接受拖拽
+		showBox.ondragover = function(e){
+			e.preventDefault();
+		};
+		// 添加拖拽结束事件
+		showBox.ondrop = function(){
+			if( moveDemo.src ){
+				this.style.background = "url(" + moveDemo.src + ") no-repeat center/cover";
+			}else{
+				this.style.background = window.getComputedStyle(moveDemo,null).background;
+			}
+		}
+	}
+</script>
+</html>

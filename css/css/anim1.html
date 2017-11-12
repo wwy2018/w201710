@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body{
+      padding: 50px;
+      color: rgba(0, 0, 0, 0.7)
+    }
+    .trigger{
+      width: 200px;
+      height: 200px;
+      border: 20px solid #998;
+      background: #ddd;
+    }
+    .box{
+      display: inline-block;
+      background: pink;
+      width: 200px;
+      height: 200px;
+      transition: transform 300ms cubic-bezier(0, 1.66, 1, 1.9);
+      pointer-events: none;
+    }
+    .trigger.clicked .box{
+      transform: translate(200px, 150px) rotate(20deg); 
+    }
+  </style>
+</head>
+<body>
+  <div class="trigger"><div class="box"></div></div>
+  
+  <script src="jq3.2.1.js"></script>
+  <script>
+    $('.trigger').on('click', function() {
+      $(this).toggleClass('clicked')
+    })
+  </script>
+</body>
+</html>

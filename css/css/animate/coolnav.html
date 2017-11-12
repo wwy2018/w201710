@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<style>
+    *,
+    *:before,
+    *:after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+    }
+
+    html,
+    body {
+        font-size: 62.5%;
+        height: 100%;
+    }
+
+    body {
+        background: -webkit-radial-gradient(circle, #2d4959 0%, #101821 100%);
+        background: radial-gradient(circle, #2d4959 0%, #101821 100%);
+    }
+
+    .demo {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -12.9rem;
+        margin-top: -28rem;
+        width: 25.8rem;
+        height: 56rem;
+        background: #FFFFFF;
+        border-radius: 3.4rem;
+        padding: 5rem 0;
+        font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    }
+
+    .dtop {
+        position: absolute;
+        left: 50%;
+        margin-left: -2.2rem;
+        top: 2.4rem;
+        width: 4.4rem;
+        height: 0.5rem;
+        background: #0A0D11;
+        border-radius: 1rem;
+        border: 1px solid #0A0D11;
+    }
+
+    .dlight {
+        position: absolute;
+        left: 0;
+        top: 18.4rem;
+        width: 5rem;
+        height: 8rem;
+        box-shadow: -2.5rem 0 10rem #0081C8;
+        border-radius: 50%;
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+
+    .dlight.menu-active {
+        top: 14rem;
+        width: 8rem;
+        height: 27rem;
+        box-shadow: -3rem 0 15rem #0081C8;
+    }
+
+    .dcontent {
+        z-index: 1;
+        position: relative;
+        height: 100%;
+        background: #103142;
+        overflow: hidden;
+    }
+
+    .dmenu {
+        position: absolute;
+        left: 0;
+        top: 13.5rem;
+    }
+
+    .dmenu:after {
+        z-index: -2;
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -6.4rem;
+        width: 9.2rem;
+        height: 32.2rem;
+        -webkit-clip-path: polygon(0 0, 100% 5.3rem, 100% 26.9rem, 0 100%);
+        clip-path: polygon(0 0, 100% 5.3rem, 100% 26.9rem, 0 100%);
+        pointer-events: none;
+        -webkit-transition: all 0.2s;
+        transition: all 0.2s;
+        opacity: 0;
+    }
+
+    .dmenu.menu-active:after {
+        z-index: 10;
+        opacity: 1;
+        -webkit-transition: all 0.6s 0.9s;
+        transition: all 0.6s 0.9s;
+    }
+
+    .dmenu.page-active-1:after {
+        background: -webkit-linear-gradient(rgba(0, 0, 0, 0.05) 0%, transparent 10%, rgba(0, 0, 0, 0.45) 100%);
+        background: linear-gradient(rgba(0, 0, 0, 0.05) 0%, transparent 10%, rgba(0, 0, 0, 0.45) 100%);
+    }
+
+    .dmenu.page-active-2:after {
+        background: -webkit-linear-gradient(rgba(0, 0, 0, 0.15) 0%, transparent 30%, rgba(0, 0, 0, 0.35) 100%);
+        background: linear-gradient(rgba(0, 0, 0, 0.15) 0%, transparent 30%, rgba(0, 0, 0, 0.35) 100%);
+    }
+
+    .dmenu.page-active-3:after {
+        background: -webkit-linear-gradient(rgba(0, 0, 0, 0.25) 0%, transparent 50%, rgba(0, 0, 0, 0.25) 100%);
+        background: linear-gradient(rgba(0, 0, 0, 0.25) 0%, transparent 50%, rgba(0, 0, 0, 0.25) 100%);
+    }
+
+    .dmenu.page-active-4:after {
+        background: -webkit-linear-gradient(rgba(0, 0, 0, 0.35) 0%, transparent 70%, rgba(0, 0, 0, 0.15) 100%);
+        background: linear-gradient(rgba(0, 0, 0, 0.35) 0%, transparent 70%, rgba(0, 0, 0, 0.15) 100%);
+    }
+
+    .dmenu.page-active-5:after {
+        background: -webkit-linear-gradient(rgba(0, 0, 0, 0.45) 0%, transparent 90%, rgba(0, 0, 0, 0.05) 100%);
+        background: linear-gradient(rgba(0, 0, 0, 0.45) 0%, transparent 90%, rgba(0, 0, 0, 0.05) 100%);
+    }
+
+    .ditem {
+        z-index: -1;
+        position: absolute;
+        left: 0;
+        width: 9.2rem;
+        height: 10.6rem;
+        background-color: #0299DC;
+        -webkit-clip-path: polygon(0 0, 100% 50%, 0 100%);
+        clip-path: polygon(0 0, 100% 50%, 0 100%);
+        cursor: pointer;
+        overflow: hidden;
+        transition: all 0.7s, -webkit-clip-path 0.4s;
+        opacity: 0;
+    }
+
+    .ditem-1 {
+        top: -6.4rem;
+        -webkit-transition-delay: 0.2s;
+        transition-delay: 0.2s;
+    }
+
+    .menu-active .ditem-1 {
+        -webkit-transition-delay: 0s;
+        transition-delay: 0s;
+    }
+
+    .ditem-2 {
+        top: -1rem;
+        -webkit-transition-delay: 0.3s;
+        transition-delay: 0.3s;
+    }
+
+    .menu-active .ditem-2 {
+        -webkit-transition-delay: 0.1s;
+        transition-delay: 0.1s;
+    }
+
+    .ditem-3 {
+        top: 4.4rem;
+        -webkit-transition-delay: 0.4s;
+        transition-delay: 0.4s;
+    }
+
+    .menu-active .ditem-3 {
+        -webkit-transition-delay: 0.2s;
+        transition-delay: 0.2s;
+    }
+
+    .ditem-4 {
+        top: 9.8rem;
+        -webkit-transition-delay: 0.5s;
+        transition-delay: 0.5s;
+    }
+
+    .menu-active .ditem-4 {
+        -webkit-transition-delay: 0.3s;
+        transition-delay: 0.3s;
+    }
+
+    .ditem-5 {
+        top: 15.2rem;
+        -webkit-transition-delay: 0.6s;
+        transition-delay: 0.6s;
+    }
+
+    .menu-active .ditem-5 {
+        -webkit-transition-delay: 0.4s;
+        transition-delay: 0.4s;
+    }
+
+    .ditem:nth-child(even) {
+        -webkit-clip-path: polygon(100% 0, 0 50%, 100% 100%);
+        clip-path: polygon(100% 0, 0 50%, 100% 100%);
+    }
+
+    .ditem:nth-child(even):after {
+        -webkit-transform: translate3d(6rem, 0, 0) rotate(90deg);
+        transform: translate3d(6rem, 0, 0) rotate(90deg);
+    }
+
+    .ditem:nth-child(even) .ditem-content {
+        -webkit-transform: translate3d(6rem, 0, 0);
+        transform: translate3d(6rem, 0, 0);
+    }
+
+    .ditem-1 {
+        -webkit-transform: translate(0, -14rem);
+        transform: translate(0, -14rem);
+    }
+
+    .ditem-2 {
+        -webkit-transform: translate(2rem, -22rem);
+        transform: translate(2rem, -22rem);
+    }
+
+    .ditem-3 {
+        -webkit-transform: translate(-100%, 0);
+        transform: translate(-100%, 0);
+    }
+
+    .ditem-4 {
+        -webkit-transform: translate(2rem, 22rem);
+        transform: translate(2rem, 22rem);
+    }
+
+    .ditem-5 {
+        -webkit-transform: translate(0, 14rem);
+        transform: translate(0, 14rem);
+    }
+
+    .menu-active .ditem {
+        z-index: 2;
+        opacity: 1;
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+
+    .ditem:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -0.6rem;
+        width: 1.6rem;
+        height: 1.2rem;
+        background: -webkit-linear-gradient(#fff 0, #fff 0.2rem, transparent 0.2rem, transparent 0.5rem, #fff 0.5rem, #fff 0.7rem, transparent 0.7rem, transparent 1rem, #fff 1rem, #fff 100%);
+        background: linear-gradient(#fff 0, #fff 0.2rem, transparent 0.2rem, transparent 0.5rem, #fff 0.5rem, #fff 0.7rem, transparent 0.7rem, transparent 1rem, #fff 1rem, #fff 100%);
+        -webkit-transform: translate3d(2rem, 0, 0) rotate(90deg);
+        transform: translate3d(2rem, 0, 0) rotate(90deg);
+        -webkit-transition: opacity 0.7s, -webkit-transform 0.7s;
+        transition: opacity 0.7s, -webkit-transform 0.7s;
+        transition: transform 0.7s, opacity 0.7s;
+        transition: transform 0.7s, opacity 0.7s, -webkit-transform 0.7s;
+        -webkit-transition-delay: inherit;
+        transition-delay: inherit;
+        opacity: 0;
+    }
+
+    .ditem-content {
+        position: absolute;
+        margin-top: -0.8rem;
+        left: 0;
+        top: 50%;
+        min-width: 1.6rem;
+        text-align: center;
+        font-size: 1.6rem;
+        color: #fff;
+        -webkit-transition: opacity 0.7s, -webkit-transform 0.7s;
+        transition: opacity 0.7s, -webkit-transform 0.7s;
+        transition: transform 0.7s, opacity 0.7s;
+        transition: transform 0.7s, opacity 0.7s, -webkit-transform 0.7s;
+        -webkit-transition-delay: inherit;
+        transition-delay: inherit;
+        -webkit-transform: translate3d(2rem, 0, 0);
+        transform: translate3d(2rem, 0, 0);
+    }
+
+    .mbtn .ditem-content {
+        -webkit-transform: translate3d(1.6rem, 0, 0) rotate(-90deg);
+        transform: translate3d(1.6rem, 0, 0) rotate(-90deg);
+        opacity: 0;
+    }
+
+    .ditem.mbtn {
+        z-index: 5;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 6.8rem;
+        height: 7.8rem;
+        opacity: 1;
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+        -webkit-clip-path: polygon(0 0, 100% 50%, 0 100%);
+        clip-path: polygon(0 0, 100% 50%, 0 100%);
+    }
+
+    .ditem.mbtn:after {
+        -webkit-transform: translate3d(1.6rem, 0, 0);
+        transform: translate3d(1.6rem, 0, 0);
+        opacity: 1;
+    }
+
+    .dpage {
+        z-index: -1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding: 4.8rem 0 0 2.2rem;
+        -webkit-transform-origin: 100% 50%;
+        transform-origin: 100% 50%;
+        -webkit-transition: all 0.5s 0.5s ease-in-out, opacity 0.5s 0s ease-in-out;
+        transition: all 0.5s 0.5s ease-in-out, opacity 0.5s 0s ease-in-out;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        opacity: 0;
+        will-change: transform, opacity, filter;
+    }
+
+    .dpage.active {
+        z-index: 1;
+        opacity: 1;
+    }
+
+    .dpage.menu-active {
+        -webkit-transform: scale(0.7) translate3d(30%, 0, 0);
+        transform: scale(0.7) translate3d(30%, 0, 0);
+        -webkit-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        -webkit-filter: blur(2px);
+        filter: blur(2px);
+    }
+
+    .dpage-heading {
+        margin-bottom: 0.5rem;
+        font-size: 2.6rem;
+        color: #fff;
+    }
+
+    .dpage-heading-colored {
+        color: #0299DC;
+    }
+
+    .dpage-subheading {
+        font-size: 1rem;
+        color: #C9CED6;
+        text-transform: uppercase;
+    }
+
+    .dpage-link {
+        display: block;
+        font-size: 1.6rem;
+        color: #0299DC;
+        margin-bottom: 0.5rem;
+        text-decoration: none;
+    }
+
+    .dpage-poly {
+        position: absolute;
+        left: 0;
+        bottom: 0.1rem;
+        width: 100%;
+        height: 39.4rem;
+        background-color: #fff;
+        -webkit-clip-path: polygon(0 100%, 13rem 100%, 100% 31.8rem, 100% 0, 0 14.8rem);
+        clip-path: polygon(0 100%, 13rem 100%, 100% 31.8rem, 100% 0, 0 14.8rem);
+    }
+
+    .dpage-poly:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 14.8rem;
+        width: 100%;
+        height: 16.9rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .dpage-1 .dpage-poly:after {
+        background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/carapp-1.png");
+    }
+
+    .dpage-2 .dpage-poly:after {
+        background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/carapp-2.jpg");
+    }
+
+    .dpage-3 .dpage-poly:after {
+        background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/carapp-3.jpg");
+    }
+
+    .dpage-4 .dpage-poly:after {
+        background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/carapp-4.jpg");
+    }
+
+    .dpage-5 .dpage-poly:after {
+        background-image: url("//s3-us-west-2.amazonaws.com/s.cdpn.io/142996/profile/profile-512_5.jpg");
+        background-size: auto 16rem;
+        background-position: center center;
+    }
+</style>
+
+<body>
+    <div class="demo">
+        <div class="dtop">
+
+        </div>
+        <div class="dlight">
+
+        </div>
+        <div class="dcontent">
+            <div class="dmenu page-active-1">
+                <div class="ditem ditem-1 mbtn js-menuBtn" data-page="1">
+                    <span class="ditem-content">1</span>
+                </div>
+                <div class="ditem ditem-2" data-page="2">
+                    <span class="ditem-content">2</span>
+                </div>
+                <div class="ditem ditem-3" data-page="3">
+                    <span class="ditem-content">3</span>
+                </div>
+                <div class="ditem ditem-4" data-page="4">
+                    <span class="ditem-content">4</span>
+                </div>
+                <div class="ditem ditem-5" data-page="5">
+                    <span class="ditem-content">你说的算</span>
+                </div>
+            </div>
+            <div class="dpage dpage-1 active">
+                <h2 class="dpage-heading">
+                    BMW i<span class="dpage-heading-colored">8</span>
+                  </h2>
+                <h3 class="dpage-subheading">Concept</h3>
+                <div class="dpage-poly"></div>
+            </div>
+            <div class="dpage dpage-2">
+                <h2 class="dpage-heading">Page 2</h2>
+                <div class="dpage-poly"></div>
+            </div>
+            <div class="dpage dpage-3">
+                <h2 class="dpage-heading">Page 3</h2>
+                <div class="dpage-poly"></div>
+            </div>
+            <div class="dpage dpage-4">
+                <h2 class="dpage-heading">Page 4</h2>
+                <div class="dpage-poly"></div>
+            </div>
+            <div class="dpage dpage-5">
+                <h2 class="dpage-heading">Links</h2>
+                <a class="dpage-link" href="https://twitter.com/NikolayTalanov" target="_blank">My Twitter</a>
+                <a class="dpage-link" href="http://codepen.io/suez/public/" target="_blank">My Codepen</a>
+                <div class="dpage-poly"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script typet="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+
+        var animating = false;
+
+        function menuToggle() {
+            $(".dpage, .dmenu, .dlight").toggleClass("menu-active");
+            $(".js-menuBtn").toggleClass("mbtn");
+            $(document).off("click", ".dcontent", closeNotFocusedMenu);
+        };
+
+        function closeNotFocusedMenu(e) {
+            if (!$(e.target).closest(".dmenu").length) {
+                menuToggle();
+                $(document).off("click", ".dcontent", closeNotFocusedMenu);
+            }
+        };
+
+        $(document).on("click", ".js-menuBtn", function() {
+            if (animating) return;
+            menuToggle();
+            $(document).on("click", ".dcontent", closeNotFocusedMenu);
+        });
+
+        $(document).on("click", ".ditem:not(.js-menuBtn)", function() {
+            animating = true;
+            var $this = $(this);
+            var page = +$this.data("page");
+            $(".js-menuBtn").removeClass("js-menuBtn");
+            $(".dpage.active").removeClass("active");
+            $this.addClass("js-menuBtn mbtn");
+            $(".dpage-" + page).addClass("active");
+            $(".dpage, .dmenu, .dlight").removeClass("menu-active");
+            $(document).off("click", ".dcontent", closeNotFocusedMenu);
+            setTimeout(function() {
+                $(".dmenu")[0].className = $(".dmenu")[0].className.replace(/\bpage-active-.*\b/gi, "");
+                $(".dmenu").addClass("page-active-" + page);
+                animating = false;
+            }, 1000);
+        });
+
+    });
+</script>
+
+</html>

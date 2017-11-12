@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul{
+				text-decoration: none;
+			}
+			li{
+				float: left;
+				display: block;
+				width: 150px;
+				height: 200px;
+				transition: all 0.5s ease-in-out;
+			}
+			li:nth-child(1){
+				background: gray;
+			}
+			li:nth-child(2){
+				background: gold;
+			}
+			li:nth-child(3){
+				background: green;
+			}
+			#round{
+				display: block;
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				background: white;
+				margin:20px auto;
+				transform: translate3d(0, 0, 0);
+            		transition: box-shadow .6s ease-in-out;
+			}
+			li:hover{
+				height: 300px;
+			}
+			li:hover #round{
+				animation: anim .5s ease-in-out;
+			}
+			@keyframes anim{
+				from{
+					transform: scale(1.5);
+				}
+				to{
+					transform: scale(1);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>
+				<span id="round">
+					
+				</span>
+			</li>
+			<li>
+				<span id="round">
+					
+				</span>
+			</li>
+			<li>
+				<span id="round">
+					
+				</span>
+			</li>
+		</ul>
+	</body>
+</html>

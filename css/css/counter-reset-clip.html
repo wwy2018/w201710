@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style lang="">
+    body {
+  counter-reset: sum;
+}
+
+input {
+  position: absolute;
+  clip: rect(0 0 0 0);	
+}
+
+#number1:checked { counter-increment: sum 64; }
+#number2:checked { counter-increment: sum 16; }
+#number3:checked { counter-increment: sum -32; }
+#number4:checked { counter-increment: sum 128; }
+#number5:checked { counter-increment: sum 4; }
+#number6:checked { counter-increment: sum -8; }
+
+.sum::before {
+  content: '= ' counter(sum);
+}
+input~label{
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  display: block;
+}
+  </style>
+</head>
+<body>
+  <input id="number1" type="checkbox"/><label for="number1"></label>
+  <input id="number2" type="checkbox"/><label for="number2"></label>
+  <input id="number3" type="checkbox"/><label for="number3"></label>
+  <input id="number4" type="checkbox"/><label for="number4"></label>
+  <input id="number5" type="checkbox"/><label for="number5"></label>
+  <input id="number6" type="checkbox"/><label for="number6"></label>
+  <div class="sum"></div>
+</body>
+</html>

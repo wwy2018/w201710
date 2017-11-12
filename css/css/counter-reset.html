@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body{counter-reset:list}
+ul{counter-reset:sublist}
+ul{list-style:none; }
+li:before{
+   counter-increment:sublist;  
+   content:counter(sublist)'.' 
+  }
+</style>
+</head>
+<body>
+  
+<h1>CSS计数器</h1>
+<div class="list">
+<ul>
+  <li>test
+    <ul>
+      <li>subtest</li>
+      <li>subtest</li>
+      <li>subtest</li>
+    </ul>
+  </li>
+  <li>test</li>
+  <li>test</li>
+  <li>test</li>
+  <li>test
+  <ul>
+    <li>subtest</li>
+    <li>subtest</li>
+    <li>subtest</li>
+  </ul>
+  </li>
+  <li>test</li>
+</ul>
+</div>
+<a href="http://caibaojian.com/">前端开发</a>
+</body>
+</html>

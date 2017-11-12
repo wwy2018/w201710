@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style media="screen">
+        #solar_wrap {
+width: 0;
+height: 0;
+background-color: #251822;
+padding: 100px 130px;
+overflow: hidden;
+}
+#solar {
+position: relative;
+width: 0;
+height: 0;
+transform: perspective(300px) rotate3d(0,0,1,30deg);
+transform-style: preserve-3d;
+}
+#solar .solar_sun {
+position: absolute;
+top: -50px;
+left: -50px;
+width: 100px;
+height: 100px;
+background-color: #FFC800;
+border-radius: 100px;
+box-shadow: 0 0 20px #FFC800;
+transform: rotate3d(0,0,0,0deg);
+animation: solar_sun_ani 2s linear infinite alternate;
+}
+@keyframes solar_sun_ani {
+0%{ box-shadow: -2px -1px 20px #FFC800, 0 0 100px rgba(255, 200, 0, 0.41); }
+100%{ box-shadow: 1px 4px 10px #FFC800, 0 0 100px rgba(255, 200, 255, 0.41); }
+}
+
+#solar .solar_earthmoon {
+position: absolute;
+top: 0;
+left: 100px;
+transform-origin: -100px;
+animation: solar_ani 10s linear infinite;
+transform-style: preserve-3d;
+}
+@keyframes solar_ani {
+0%{ transform: rotate3d(0,1,0,0deg); }
+100%{ transform: rotate3d(0,1,0,360deg); }
+}
+
+#solar .solar_earth {
+position: absolute;
+top: -15px;
+left: -15px;
+width: 30px;
+height: 30px;
+background-color: #0089FF;
+border-radius: 100px;
+background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAeCAMAAABHRo19AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABJQTFRFOaenWrh0cMRTG5fWeslDAIn/RegfswAAAUVJREFUeNqkVVuWxSAIg6D73/JIW5Uo9fac8a9KeARIpf7jyH5lIirxU1VEzOwItgaTqqUUnZf+OY+6IyOwx+pGVhGwUvYz40nLilw3Vw9WFQlUQ/bCvhEryrCFa6bA9lZsTC0Splk5L/Wy/2ZuyLw6jx8iDyNQs725Wc0m3OfbCCGhpwokgQXLkOiCfXKBXL25xgYZK53aiB2FtNHR27fVax6QjaeJpVQ918BtBM1nu8XQ4WEw1fOR81Z163uhxswyys7gYf50n821UHkbGDRgWEI5ibKD+3bNJyw7NFZ+UhOfOJSHMf0sQwtBaK7KJj6mo+HCfIAr1LoLl84FWcDcGVgij2G9eFbxU1orQkuFRfenVDvbviRXUvJB2zfF7uXJEdQlGbw3eph4izpeeOjf/xi+WalYd4I5gQi2A4wyGBz8CTAAnT8d1uAmhyoAAAAASUVORK5CYII=");
+background-position: 50% 50%;
+animation: solar_earth_ani 10s linear infinite;
+}
+@keyframes solar_earth_ani {
+0%{ transform: rotate3d(0,1,0,360deg); background-position: 0 50%;}
+100%{ transform: rotate3d(0,1,0,0deg); background-position: -3000% 50%;}
+}
+
+#solar .solar_moon {
+position: absolute;
+top: 0;
+left: 30px;
+transform-origin: -30px;
+animation: solar_ani 1s linear infinite;
+transform-style: preserve-3d;
+}
+#solar .solar_moon:before {
+content: "";
+display: block;
+position: absolute;
+top: -5px;
+left: -5px;
+width: 10px;
+height: 10px;
+background-color: #DCE3E6;
+border-radius: 100px;
+animation: solar_moon_ani 10s linear infinite;
+}
+@keyframes solar_moon_ani {
+0%{ transform: rotate3d(0,1,0,3960deg); }
+100%{ transform: rotate3d(0,1,0,0deg); }
+}
+        </style>
+    </head>
+    <body>
+        <div class="" id="solar_wrap">
+            <div class="" id="solar">
+                <div class="solar_sun">
+
+                </div>
+                <div class="solar_earthmoon">
+                    <div class="solar_earth">
+
+                    </div>
+                    <div class="solar_moon">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

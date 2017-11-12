@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //浏览器加载图片并缓存 当需要显示时 不会有延迟
+    (new Image()).src="b.png";
+  </script>
+  <img src="a.png" alt="" width="300px" height="300px" onmouseover="this.src='b.png'" onmouseout="this.src='a.png'">
+</body>
+</html>

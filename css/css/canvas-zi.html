@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>画字</title>
+		<style type="text/css">
+			canvas{
+				display: block;
+				margin: 10px auto;
+			}
+			#control{margin: 0 auto;text-align: center;}
+			.btn{width: 45px;height: 45px;display: inline-block;float: left;margin-right: 10px;line-height: 45px;}
+			#blackbtn{background-color: black;}
+			#redbtn{background-color: red;}
+			#yellowbtn{background-color: yellow;}
+			#greenbtn{background-color: green;}
+			#pinkbtn{background-color: pink;}
+			.btn:hover{border:1px solid violet}
+			.active{border:2px solid blueviolet}
+			.cancel-btn{float: right;width: 45px;height: 45px;display: inline-block;line-height: 45px;}
+			.clearfix{clear: both;}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas">您的浏览器不支持canvas</canvas>
+		<div id="control">
+			<div id="blackbtn" class="btn active"></div>
+			<div id="redbtn" class="btn"></div>
+			<div id="yellowbtn" class="btn"></div>
+			<div id="greenbtn" class="btn"></div>
+			<div id="pinkbtn" class="btn"></div>
+			<div id="cancel" class="cancel-btn">取消</div>
+			<div class="clearfix">
+				
+			</div>
+		</div>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript">
+			var width=Math.min(500, $(window).width()-20);
+			var canvas=document.getElementById("canvas"); 
+			var context=canvas.getContext('2d');
+			canvas.width=width;
+			canvas.height=width;
+			var isdown=false;
+			var strokecolor='black'
+			$("#control").css("width",width+"px")
+			
+			drawGrid();
+			canvas.onmousedown=function(e){
+				
+			}
+			canvas.onmouseout=function(e){
+				
+			}
+			canvas.onmouseup=function(e){
+				
+			}
+			canvas.onmousemove=function(e){
+				
+			}
+			canvas.addEventListener('touchstart',function(e){
+				
+			})
+			canvas.addEventListener('touchmove',function(e){
+				
+			})
+			canvas.addEventListener('touchend',function(e){
+				
+			})
+			function drawGrid(){
+				context.save();
+				context.strokeStyle="rgb(230,11,9)";
+				context.beginPath();
+				context.moveTo(0,0);
+				context.lineTo(width,0);
+				context.lineTo(width,width);
+				context.lineTo(0,width)
+				context.closePath();
+				context.lineWidth=6;
+				context.stroke();
+				
+				context.beginPath()
+				context.moveTo(0,0)
+				context.lineTo(width,width)
+				context.moveTo(width,0)
+				context.lineTo(0,width)
+				context.moveTo(width/2,0)
+				context.lineTo(width/2,width)
+				context.moveTo(0,width/2);
+				context.lineTo(width,width/2);
+				context.lineWidth=1;
+				context.stroke();
+				context.restore();
+			}
+		</script>
+	</body>
+</html>

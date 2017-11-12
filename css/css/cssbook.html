@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /*属性选择器 [att^='val'] [att$='val'] [att*='val'] eg: [class$="title"]*/
+
+    [class$='title'] {
+      color: red;
+    }
+    /*兄弟选择器*/
+
+    .title2~p {
+      color: green;
+    }
+    /*多栏布局*/
+
+    .wrapper {
+      /*-webkit-column-count: 3;
+      -webkit-column-gap: 1.5em;
+      -webkit-column-rule: 1px solid #ccc;
+      column-count: 3;
+      column-gap: 1.5em;
+      column-rule: 1px solid #ccc;
+      text-align: justify;*/
+    }
+
+    .title0 {
+      word-wrap: break-word;
+      word-break: break-all;
+      transform: skew(7deg, 8deg);
+      background: #9cbc2c no-repeat left 50%;
+    }
+
+    .title1 {
+      border: double green 12px;
+      height: 200px;
+      padding: 20px;
+      border-image: url("bg.png") 124;
+      -webkit-border-image: url("bg.png") 124;
+      background-origin: content;
+      background: pink;
+    }
+    /*form*/
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #fff;
+      color: #111;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      padding: 20px;
+    }
+
+    form#payment {
+      background: #9cbc2c;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      padding: 20px;
+      width: 400px;
+      
+    }
+
+    form#payment fieldset {
+      border: none;
+      margin-bottom: 10px;
+    }
+
+    form#payment fieldset:last-of-type {
+      margin-bottom: 0
+    }
+
+    form#payment legend {
+      color: #384313;
+      font-size: 16px;
+      font-weight: bold;
+      padding-bottom: 10px;
+      text-shadow: 0 1px 1px #c0d576;
+    }
+
+    form#payment>fieldset>legend::before {
+      content: "Step " counter(fieldsets) ": ";
+      counter-increment: fieldsets;
+    }
+
+    form#payment fieldset fieldset legend {
+      color: #111;
+      font-size: 13px;
+      font-weight: normal;
+      padding-bottom: 0;
+    }
+
+    form#payment ol li {
+      background: #b9cf6a;
+      background: rgba(255, 255, 255, .3);
+      border-color: #e3dbc3;
+      border-color: rgba(255, 255, 255, .6);
+      border-style: solid;
+      border-width: 2px;
+      border-radius: 5px;
+      line-height: 30px;
+      list-style: none;
+      padding: 5px 10px;
+      margin-bottom: 2px;
+    }
+
+    form#payment ol ol li {
+      background: none;
+      border: none;
+      float: left;
+    }
+
+    form#payment label {
+      float: left;
+      font-size: 13px;
+      width: 110px;
+    }
+
+    form#payment fieldset fieldset label {
+      background: none no-repeat left 50%;
+      line-height: 20px;
+      padding: 0 0 0 30px;
+      width: auto;
+    }
+
+    form#payment fieldset fieldset label:hover {
+      cursor: pointer
+    }
+
+    form#payment input:not([type=radio]),
+    form#payment textarea {
+      background: #fff;
+      border: #fc3 solid 1px;
+      border-radius: 3px;
+      font: italic 13px Georgia, "Times New Roman", Times, serif;
+      outline: none;
+      padding: 5px;
+      width: 200px;
+    }
+    /*ui伪类选择器*/
+    /*:hover :active :focus :enabled :disabled :read-only :read-write :checked :default :indeterminate ::selection*/
+
+    input:read-only {
+      background: red;
+    }
+
+    input:read-write {
+      background: green;
+    }
+
+     :indeterminate,
+     :indeterminate+label {
+      background: lime;
+    }
+
+     ::selection {
+      background: red;
+    }
+
+    div:target {
+      background: blue;
+    }
+    /*文字多色阴影*/
+
+    .title p {
+      text-shadow: 0.2px 0.5px 0.1px #600, -0.3px 0.1px 0.1px #060, 0.4px -0.3px 0.1px #006;
+    }
+    /*hacker*/
+
+    body {
+      background: black;
+      color: #666;
+    }
+
+    #text-shadow-box {
+      position: relative;
+      width: 600px;
+      height: 400px;
+      background: #666;
+      overflow: hidden;
+      border: #333 1px solid;
+    }
+
+    #text-shadow-box div.wall {
+      position: absolute;
+      width: 100%;
+      top: 175px;
+      left: 0;
+    }
+
+    #text {
+      text-align: center;
+      line-height: 0.5em;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      height: 1px;
+      color: #999;
+      font-size: 80px;
+      font-weight: bold;
+      text-shadow: 5px -5px 16px #000;
+    }
+
+    div.wall div {
+      position: absolute;
+      width: 100%;
+      height: 300px;
+      top: 42px;
+      left: 0;
+      background: #999;
+    }
+    /*#spotlight{
+      position: absolute;width: 100%;height: 100%;top: 0;left: 0;background: yellow;font-size: 12px;
+    }*/
+
+    h2 {
+      /* text-emphasis: shape color; */
+      text-emphasis: triangle #555;
+    }
+    div.border{
+      width: 500px;
+      height: 100px;
+      border: 10px solid #ccc;
+      border-top-colors: #100 #200 #300 #400 #500 #600 #700 #800 #900 #a00;
+      border-bottom-colors: #100 #200 #300 #400 #500 #600 #700 #800 #900 #a00;
+      border-left-colors: #100 #200 #300 #400 #500 #600 #700 #800 #900 #a00;
+      border-right-colors: #100 #200 #300 #400 #500 #600 #700 #800 #900 #a00;
+      border-top-color: red;
+      border-bottom-color: green;
+      border-left-color: gray;
+      border-right-color: yellow;
+    }
+    div.resize{
+      background: url(img1.jpg) no-repeat center;
+      background-clip: content;
+      width: 800px;
+      height: 800px;
+      padding: 60px;
+      border: 1px solid red;
+      resize: both;
+      overflow: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="title title0">
+      <p>he specification asks browsers to provide as little information via this field as possible. Never assume that the value
+        of this property will stay the same in future versions of the same browser. Try not to use it at all, or only for
+        current and past versions of a browser. New browsers may start using the same UA, or part of it, as an older browser:
+        you really have no guarantee that the browser agent is indeed the one advertised by this property.</p>
+    </div>
+    <div class="title1" id="red">
+      <p>PHP 是免费的，并且使用非常广泛。同时，对于像微软 ASP 这样的竞争者来说，PHP 无疑是另一种高效率的选项。</p>
+    </div>
+    <div class="title2 title">
+      <p>test test</p>
+    </div>
+    <p>page</p>
+  </div>
+  <input type="text">
+  <input type="text" readonly>
+  <label for="checkbox">aaaa</label><input type="checkbox" id="checkbox">
+  <!--form-->
+  <form action="" id="payment">
+    <fieldset>
+      <legend>用户详细资料</legend>
+      <ol>
+        <li><label for="">用户名称：<input type="text"></label></li>
+        <li><label for="">邮箱地址：<input type="text"></label></li>
+        <li><label for="">联系电话：<input type="text"></label></li>
+      </ol>
+    </fieldset>
+    <fieldset>
+      <legend>家庭住址</legend>
+      <ol>
+        <li><label for="">用户名称：<input type="text"></label></li>
+        <li><label for="">邮箱地址：<input type="text"></label></li>
+        <li><label for="">联系电话：<input type="text"></label></li>
+      </ol>
+    </fieldset>
+    <fieldset>
+      <legend>付费方式</legend>
+      <ol>
+        <li>
+          <fieldset>
+            <legend>信用卡类型</legend>
+            <ol>
+              <li><label for="">用户名称：<input type="text"></label></li>
+              <li><label for="">邮箱地址：<input type="text"></label></li>
+              <li><label for="">联系电话：<input type="text"></label></li>
+            </ol>
+          </fieldset>
+        </li>
+        <li><label for="">用户名称：<input type="text"></label></li>
+        <li><label for="">邮箱地址：<input type="text"></label></li>
+        <li><label for="">联系电话：<input type="text"></label></li>
+      </ol>
+    </fieldset>
+    <fieldset><button>现在购买</button></fieldset>
+  </form>
+  <div id="text-shadow-box">
+    <div class="wall">
+      <p id="text">黑客帝国</p>
+      <div></div>
+    </div>
+    <div id="spotlight"><a href="">hacker home</a></div>
+    <div id="cat"><img src="bg.png" alt=""></div>
+  </div>
+  <h2>text emphasis</h2>
+  <div class="border">border</div>
+  <div class="resize"></div>
+  <video id="movies" autoplay oncanplay="startVideo()" onended="stopTimeline()" autobuffer="true" width="400px" height="300px" >
+    <source src="bg.mp4" type="video/mp4">
+  </video>
+  <canvas id="timeline" width="400px" height="300px"></canvas>
+  <script>
+    var checkbox = document.getElementById('checkbox');
+    checkbox.indeterminate = true;
+    // video
+    var updateInterval=5000;
+    var frameWidth=100;
+    var frameHeight=75;
+    var frameRows=4;
+    var frameColumns=4;
+    var frameGrid=frameRows*frameColumns;
+    var frameCount=0;
+    var intervalId;
+    var videoStarted=false;
+    function startVideo(){
+      if(videoStarted){
+        return
+      }
+      videoStarted=true;
+      updateFrame();
+      intervalId=setInterval(updateFrame,updateInterval);
+      var timeline=document.getElementById('timeline');
+      timeline.onclick=function(evt) {
+        var offX=evt.layerX-timeline.offsetLeft;
+        var offY=evt.layerY-timeline.offsetTop;
+        var clickedFrame=Math.floor(offY/frameHeight)*frameRows;
+        clickedFrame+=Math.floor(offY/frameWidth);
+        var seekedFrame=(((Math.floor(frameCount/frameGrid))*frameGrid)+clickedFrame);
+        if(clickedFrame>(frameCount%16)){
+          seekedFrame-=frameGrid
+        }
+        if(seekedFrame<0){
+          return;
+        }
+        var video=document.getElementById('movies');
+        video.currentTime=seekedFrame*updateInterval/1000;
+        frameCount=seekedFrame;
+      }
+    }
+    function updateFrame(){
+      var video=document.getElementById('movies')
+      var timeline=document.getElementById('timeline')
+      var ctx=timeline.getContext('2d')
+      var framePosition=frameCount%frameGrid
+      var frameX=(framePosition%frameColumns)*frameWidth
+      var frameY=(Math.floor(framePosition/frameRows))*frameHeight
+      ctx.drawImage(video,0,0,400,300,frameX,frameY,frameWidth,frameHeight)
+      frameCount++
+    }
+    function stopTimeline(){
+      clearInterval(intervalId)
+    }
+  </script>
+</body>
+
+</html>

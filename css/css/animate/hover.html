@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style media="screen">
+            body{
+                margin: 200px;text-align: center;font: 1em "微软雅黑";
+            }
+            ul{
+                list-style-type: none;
+            }
+            a{
+                text-decoration: none;color: #535353;
+            }
+            a:hover{
+                color: #D40000;
+            }
+            li{
+                display: inline-block;position: relative;margin-left: -50px;transition: all .4s linear;
+            }
+            li a{
+                display: inline-block;width: 90px;height: 90px;padding: 30px;border-radius: 50%;border-width: 8px;border-style: solid;border-color: #e499b0;text-shadow: 0 1px 0 #de8ba5;
+            }
+            li:hover{
+                z-index: 11;transform: scale(1.1);
+            }
+            li:hover span{
+                transition: all .4s linear;animation: moveFromBottom .3s ease;
+            }
+            @@keyframes moveFromBottom {
+                from{
+                    transform: translateY(120%) scale(0.5);opacity: 0;
+                }to{
+                    transform: translateY(0%) scale(1);opacity: 1;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="page">
+            <ul>
+                <li><a href="#"><span>home</span></a></li>
+                <li><a href="#"><span>phone</span></a></li>
+                <li><a href="#"><span>wifi</span></a></li>
+                <li><a href="#"><span>setting</span></a></li>
+                <li><a href="#"><span>twitter</span></a></li>
+            </ul>
+        </div>
+    </body>
+</html>

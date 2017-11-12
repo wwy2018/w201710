@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>yueyue</title>
+	<style type="text/css">
+		div{
+			width: 400px;height: 400px;margin: 100px auto;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<canvas id="demo" width="400px" height="400px"></canvas>
+	</div>
+	<script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		var canvas=document.getElementById('demo');
+		var cet=canvas.getContext('2d');
+		/*axis 130*/
+		cet.beginPath();
+		cet.moveTo(70,90);
+		cet.quadraticCurveTo(130,30,187,90);
+		cet.quadraticCurveTo(160,85,143,88);
+		cet.quadraticCurveTo(132,89,130,95);
+        cet.quadraticCurveTo(132,89,117,88);
+        cet.quadraticCurveTo(100,85,70,90);
+        cet.fillStyle="#3e0d09";
+        cet.fill();
+        cet.stroke();
+        
+        /*left brow*/
+       	cet.beginPath();
+       	cet.moveTo(90,130);
+       	cet.quadraticCurveTo(96,113,115,130);
+        cet.quadraticCurveTo(117,131,113,133);
+        cet.quadraticCurveTo(96,120,90,130);
+        cet.fillStyle="#614248";
+        cet.fill();
+        cet.stroke();
+        
+        /* 右面眉毛 */
+        cet.beginPath();
+        cet.moveTo(170, 130);
+        cet.quadraticCurveTo(165,113,145,130);
+        cet.quadraticCurveTo(143,131,147,133);
+        cet.quadraticCurveTo(164,120,170,130);
+        cet.fillStyle="#614248";
+        cet.fill();
+        cet.stroke();
+        
+        /* 左面眼睛 */
+        cet.beginPath();
+        cet.lineWidth=3;
+        cet.strokeStyle="#431b24";
+        cet.moveTo(88, 148);
+        cet.lineTo(115,150);
+        cet.moveTo(107, 150);
+        cet.quadraticCurveTo(104,157,101,150);
+        cet.fillStyle="#431b24";
+        cet.fill();
+        cet.stroke();
+        /* 右面眼睛 */
+        cet.beginPath();
+        cet.lineWidth=3;
+        cet.strokeStyle="#431b24";
+        cet.moveTo(172, 148);
+        cet.lineTo(145,150);
+        cet.moveTo(153, 150);
+        cet.quadraticCurveTo(156,157,159,150);
+        cet.fillStyle="#431b24";
+        cet.fill();
+        cet.stroke();
+        
+        /* 鼻子 */
+        cet.beginPath();
+        cet.lineWidth=1;
+        cet.moveTo(120, 163);
+        cet.quadraticCurveTo(120,165,122,170);
+        cet.quadraticCurveTo(130,172,138,170);
+        cet.quadraticCurveTo(140,165,140,163);
+        cet.stroke();
+        
+        /* 嘴 */
+        cet.beginPath();
+        cet.moveTo(111, 180)
+        cet.quadraticCurveTo(130,197,149,180);
+        cet.stroke();
+        
+        /* 左耳朵*/
+        cet.beginPath();
+        cet.moveTo(69, 148);
+        cet.quadraticCurveTo(53,140,58,166);
+        cet.quadraticCurveTo(59,170,58,175);
+        cet.quadraticCurveTo(57,183,68,184);
+        cet.moveTo( 68,165 );
+        cet.quadraticCurveTo(65,158,60,160);
+        cet.moveTo(68,175 );
+        cet.quadraticCurveTo(60,170,62,165);
+        cet.fillStyle="#fde9ea";
+        cet.fill();
+        cet.stroke();
+
+        /* 右耳朵 */
+        cet.beginPath();
+        cet.moveTo(191, 148);
+        cet.quadraticCurveTo(207,140,202,166);
+        cet.quadraticCurveTo(201,170,202,175);
+        cet.quadraticCurveTo(203,183,192,184);
+        cet.moveTo( 192,165 );
+        cet.quadraticCurveTo(195,158,200,160);
+        cet.moveTo(192,175 );
+        cet.quadraticCurveTo(200,170,198,165);
+        cet.fillStyle="#fde9ea";
+        cet.fill();
+        cet.stroke();
+        
+        /* 身体 */
+        cet.beginPath();
+        cet.moveTo(100, 210);
+        cet.quadraticCurveTo(85,218,70,240);
+        cet.quadraticCurveTo(73,270,115,276);
+        cet.quadraticCurveTo(180,283,190,240);
+        cet.quadraticCurveTo(175,218,160,210);
+        cet.quadraticCurveTo(130,218,100,210);
+        cet.fillStyle="#949dd4";
+        cet.fill();
+        cet.stroke();
+
+        /* 衣服 */
+        cet.beginPath();
+        cet.moveTo(80, 260);
+        cet.quadraticCurveTo(80,240,100,230);
+        cet.moveTo(106, 235);
+        cet.quadraticCurveTo(95,233,95,220);
+        cet.moveTo(100, 230);
+        cet.quadraticCurveTo(125,230,130,220);
+        cet.moveTo(120, 217);
+        cet.quadraticCurveTo(130,221,140,217);
+        cet.moveTo(125, 215);
+        cet.lineTo(135, 220);
+        cet.moveTo(135, 215);
+        cet.lineTo(125, 220);
+        cet.stroke();
+
+        /* 左 脸庞 */
+        cet.beginPath();
+        cet.moveTo(80, 170);
+        cet.quadraticCurveTo(78,167,80,165);
+        cet.quadraticCurveTo(87,163,95,165);
+        cet.quadraticCurveTo(98,167,95,170);
+        cet.quadraticCurveTo(87,172,80,170);
+        cet.fillStyle="#e8afb9";
+        cet.fill();
+
+        /* 右 脸庞 */
+        cet.beginPath();
+        cet.moveTo(180, 170);
+        cet.quadraticCurveTo(182,167,180,165);
+        cet.quadraticCurveTo(173,163,165,165);
+        cet.quadraticCurveTo(162,167,165,170);
+        cet.quadraticCurveTo(173,172,180,170);
+        cet.fillStyle="#e8afb9";
+        cet.fill();
+        
+        /* 字 */
+        cet.font="40px Georgia";
+
+        var grd=cet.createLinearGradient(210,0,300,300);
+        grd.addColorStop(0,"#FF0000");
+        grd.addColorStop("0.3","magenta");
+        grd.addColorStop("0.5","blue");
+        grd.addColorStop("0.6","green");
+        grd.addColorStop("0.8","yellow");
+        grd.addColorStop(1,"#00FF00");
+        cet.fillStyle=grd;
+
+        var time=1;
+        setInterval(function(){
+            if(time==7){
+                cet.clearRect(210, 0, 300, 400)
+                time=0
+            }
+            if(time==1){
+                cet.fillText("妮",250,100);
+            }
+            if(time==2){
+                cet.fillText("儿",250,150);
+            }
+            if(time==3){
+                cet.fillText("弄",250,200);
+            }
+            if(time==4){
+                cet.fillText("啥",250,250);
+            }
+            if(time==5){
+                cet.fillText("嘞",250,300);
+            }
+            if(time==5){
+                cet.fillText(" ！",250,350);
+            }
+            time++;
+        },300)
+	</script>
+</body>
+</html>

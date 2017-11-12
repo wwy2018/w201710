@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>calc</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+		}
+
+		#demo {
+			width: 400px;
+			height: 200px;
+			background: black;
+			position: relative;
+			left: 100px;
+			top: 100px;
+			cursor: pointer;
+			overflow: hidden;
+			text-align: center;
+		}
+
+		#demo span {
+			font-size: 20px;
+			color: #fc6e00;
+			font-family: arial;
+			position: relative;
+			top: -40px;
+			transition: top 0.2s ease;
+			-webkit-transition: top 0.2s ease;
+			z-index: 10;
+		}
+
+		#demo div {
+			width: 500px;
+			height: 500px;
+			background: #0e8a7c;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			border-radius: 50%;
+			margin: -250px 0 0 -250px;
+			transform: scale(0);
+			z-index: 1;
+		}
+
+		#demo:before {
+			content: '';
+			display: block;
+			width: 40px;
+			height: 40px;
+			background: #0e8a7c;
+			border-radius: 50%;
+			position: absolute;
+			left: -50px;
+			top: calc(50%-20px);
+			transition: left 0.2s ease;
+			-webkit-transition: left 0.2s ease;
+		}
+
+		#demo:after {
+			position: absolute;
+			right: -40px;
+			top: calc(50%-15px);
+			content: '';
+			display: block;
+			width: 30px;
+			height: 30px;
+			background: url(http://img5.imgtn.bdimg.com/it/u=2033765348,1346395611&fm=23&gp=0.jpg);
+			background-size: 80% 80%;
+			background-position: center center;
+			background-repeat: no-repeat;
+			z-index: 10;
+			transition: right .2s ease;
+			-webkit-transition: right 0.2s ease;
+		}
+
+		#demo:hover:after {
+			right: calc(50% - 15px);
+			transition: right 0.2s ease;
+			-webkit-transition: right 0.2s ease;
+		}
+
+		#demo:hover:before {
+			left: calc(50% - 20px);
+			transition: left 0.2s ease;
+			-webkit-transition: left 0.2s ease;
+		}
+
+		#demo:hover span {
+			top: 40px;
+			transition: top 0.2s ease 0.2s;
+			-webkit-transition: top 0.2s ease 0.2s;
+		}
+
+		#demo:hover div {
+			transform: scale(1);
+			-webkit-transition: transform 0.5s ease 0.2s;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="demo">
+		<span>DEMO
+
+		</span>
+		<div>
+
+		</div>
+	</div>
+</body>
+</html>

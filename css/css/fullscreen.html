@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <title></title>
+
+    <script>
+        function launchFullscreen(element) {
+            if(element.requestFullscreen) {
+                element.requestFullscreen();
+            } else if(element.mozRequestFullScreen) {
+                element.mozRequestFullScreen();
+            } else if(element.webkitRequestFullscreen) {
+                element.webkitRequestFullscreen();
+            }
+            else if(document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if(document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if(document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            }else if (document.msExitFullscreen) {
+                alert('不兼容IE')
+            }
+        }
+
+        function exitFullscreen() {
+            if(document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if(document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if(document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            }else if (document.msExitFullscreen) {
+                alert('不兼容IE')
+            }
+        }
+        function dumpFullscreen() {
+            console.log("document.fullscreenElement is: ", document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement);
+            console.log("document.fullscreenEnabled is: ", document.fullscreenEnabled || document.mozFullScreenEnabled || document.webkitFullscreenEnabled || document.msFullscreenEnabled);
+        }
+        // Events
+        document.addEventListener("fullscreenchange", function(e) {
+            console.log("fullscreenchange event! ", e);
+        });
+        document.addEventListener("mozfullscreenchange", function(e) {
+            console.log("mozfullscreenchange event! ", e);
+        });
+        document.addEventListener("webkitfullscreenchange", function(e) {
+            console.log("webkitfullscreenchange event! ", e);
+        });
+        document.addEventListener("msfullscreenchange", function(e) {
+            console.log("msfullscreenchange event! ", e);
+        });
+
+       function toggleFullscreen(de){
+	      if(document.fullscreen || document.webkitIsFullScreen || document.mozFullScreen)
+		  {
+		     exitFullscreen(de);
+		  }
+		  else
+		  {
+		    launchFullscreen(de);
+		  }
+	   }
+
+    </script>
+</head>
+<body>
+    <p><button onclick="launchFullscreen(document.documentElement);">全屏</button></p>
+    <p><button onclick="exitFullscreen(document.documentElement);">退出</button></p>
+    <p><button onclick="toggleFullscreen(document.documentElement)">toggle</button></p>
+</body>
+</html>

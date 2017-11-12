@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .heartbeat {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90px;
+  height: 60px;
+  /* -webkit-animation: beat 1.5s ease-in-out both infinite;
+          animation: beat 1.5s ease-in-out both infinite;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-origin: 25% 25%;
+          transform-origin: 25% 25%; */
+}
+
+.heartbeat:after {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 10px;
+  height: 10px;
+  content: '';
+  box-shadow: 10px 10px transparent, 20px 10px transparent, 30px 10px red, 40px 10px red, 50px 10px transparent, 60px 10px red, 70px 10px red, 80px 10px transparent, 90px 10px transparent, 10px 20px transparent, 20px 20px red, 30px 20px red, 40px 20px red, 50px 20px red, 60px 20px red, 70px 20px red, 80px 20px red, 90px 20px transparent, 10px 30px transparent, 20px 30px red, 30px 30px red, 40px 30px red, 50px 30px red, 60px 30px red, 70px 30px red, 80px 30px red, 90px 30px transparent, 10px 40px transparent, 20px 40px transparent, 30px 40px red, 40px 40px red, 50px 40px red, 60px 40px red, 70px 40px red, 80px 40px transparent, 90px 40px transparent, 10px 50px transparent, 20px 50px transparent, 30px 50px transparent, 40px 50px red, 50px 50px red, 60px 50px red, 70px 50px transparent, 80px 50px transparent, 90px 50px transparent, 10px 60px transparent, 20px 60px transparent, 30px 60px transparent, 40px 60px transparent, 50px 60px red, 60px 60px transparent, 70px 60px transparent, 80px 60px transparent, 90px 60px transparent;
+}
+  </style>
+</head>
+<body>
+  <div class="heartbeat"></div>
+</body>
+</html>

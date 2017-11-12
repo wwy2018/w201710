@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>loading</title>
+        <style media="screen">
+        .box{
+            width: 100%;
+            padding:3%;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .box .loader{
+            width: 30%;
+            float: left;
+            height: 200px;
+            margin-right: 3%;
+            border:1px #ccc solid;
+            box-sizing: border-box;
+
+             display: flex;
+             align-content: center;
+             justify-content: center;
+             position: relative;
+        }
+        .box .loading {
+            position: absolute;
+            top: 50px;
+        }
+
+        @-webkit-keyframes loading-1{
+            0%{
+                transform: rotate(0deg);
+            }
+            50%{
+                transform: rotate(180deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+        .demo-1 .loading{
+            width: 35px;
+            height: 35px;
+            position: relative;
+        }
+        .demo-1 .loading i{
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius:50%;
+            background: linear-gradient(transparent 0%, transparent 70%, #333 30% ,#333 100%);
+            -webkit-animation: loading-1 .6s linear 0s infinite;
+        }
+            @-webkit-keyframes loading-2 {
+                0%{
+    				transform: scaleY(1);
+    			}
+    			50%{
+    				transform: scaleY(0.4);
+    			}
+    			100%{
+    				transform: scaleY(1);
+    			}
+            }
+            .demo-2 .loading i{
+    			display: inline-block;
+    			width: 4px;
+    			height: 35px;
+    			border-radius: 2px;
+    			margin:0 2px;
+    			background-color: #333;
+    		}
+    		.demo-2 .loading i:nth-child(1){
+    			-webkit-animation:loading-2 1s ease-in .1s infinite;
+    		}
+    		.demo-2 .loading i:nth-child(2){
+    			-webkit-animation:loading-2 1s ease-in .2s infinite;
+    		}
+    		.demo-2 .loading i:nth-child(3){
+    			-webkit-animation:loading-2 1s ease-in .3s infinite;
+    		}
+    		.demo-2 .loading i:nth-child(4){
+    			-webkit-animation:loading-2 1s ease-in .4s infinite;
+    		}
+    		.demo-2 .loading i:nth-child(5){
+    			-webkit-animation:loading-2 1s ease-in .5s infinite;
+    		}
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <div class="loader demo-1">
+                <div class="loading">
+                    <i></i>
+                </div>
+            </div>
+            <div class="loader demo-2">
+    			<div class="loading">
+    				<i></i>
+    				<i></i>
+    				<i></i>
+    				<i></i>
+    				<i></i>
+    			</div>
+    		</div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>紧贴浏览器底部</title>
+<style type="text/css">
+* {
+        padding: 0;
+        margin: 0;
+}
+html {
+        _overflow: auto;/*滚动条*/
+}
+body {
+        _width: expression(this.parentNode.clientWidth);
+}
+html,
+body {
+        height: 100%;
+}
+.section {
+        min-height: 100%;
+        _height: 100%;/*ie6不识别min-height才加一句这个*/
+        padding-bottom: 60px;
+}
+.footer {
+        height: 60px;
+        background:#FF6600;
+        margin-top: -60px;
+        color: #FFF;
+}
+</style>
+</head>
+<body>
+<div class="section">
+    <p>111111111111111</p>
+    <p>222222222222222</p>
+    <p>333333333333333</p>
+        <p>111111111111111</p>
+    <p>222222222222222</p>
+
+</div>
+<div class="footer">我这是在底部</div>
+</body>
+</html>

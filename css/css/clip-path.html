@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .avatar{
+      width: 200px;
+      height: 200px;
+      background: red;
+      /*clip-path: polygon(0% 5%, 100% 0%, 100% 85%, 65% 80%, 75% 100%, 40% 80%, 0% 75%);*/
+      /*clip-path: url(#clip);*/
+      clip-path: circle(50px at 0 100px);
+    }
+    .hide { position: absolute; top: -9999px; left: -9999px; }
+  </style>
+</head>
+<body>
+  <!--http://www.w3cplus.com/css/basic-shapes-path.html-->
+  <div class="avatar"></div>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 201 196.1" class="hide">>
+    <clipPath id="clip"> <path d="M100.5,39.47C100.5,58.3,83.36,74,60.58,77.64l16.85,19.9L33.94,76.25C14.47,70.92.5,56.47.5,39.47c0-21.52,22.39-39,50-39S100.5,17.95,100.5,39.47Z" fill="#fff" stroke="#000" stroke-miterlimit="10"></path> </clipPath>
+  </svg>
+</body>
+</html>

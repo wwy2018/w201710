@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ailsa</title>
+		<link rel="stylesheet" type="text/css" href="owl/owl-carousel/owl.carousel.css"/>
+		<link rel="stylesheet" type="text/css" href="owl/owl-carousel/owl.theme.css"/>
+		<link rel="stylesheet" type="text/css" href="../you/public/css/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+		<style type="text/css">
+			*{padding: 0;margin: 0;}
+			#preloader{width: 100%;height: 100%;display: flex;flex-flow: row nowrap;justify-content: center;align-items: center;z-index: 99999;background: #fff;position: fixed;top: 0;left: 0;}
+			#spinner{width: 60px;height: 60px;border-radius: 100%;animation: spin 1s infinite ease-in-out;margin: 40px auto;-webkit-animation: spin 1s infinite ease-in-out;background: red;}
+			@keyframes spin{
+				from{transform: scale(0);-webkit-transform: scale(0);}
+				to{transform: scale(1);-webkit-transform: scale(1);}
+			}
+			@-webkit-keyframes spin{
+				from{transform: scale(0);-webkit-transform: scale(0);}
+				to{transform: scale(1);-webkit-transform: scale(1);}
+			}
+			
+			.item{width: 600px;height: 400px;}
+			.owl-img{width: 100%;height: 100%;}
+			#img1{background: url(img/20160306084223_NmRsx.jpeg) no-repeat;background-size: contain;background-position: center;}
+			#img2{background: url(img/22550154K-0.jpg) no-repeat;background-size: contain;background-position: center;}
+			#img3{background: url(img/20160131132743_YyHAk.jpeg) no-repeat;background-size: contain;background-position: center;}
+			#wrapper{width:100%;overflow:hidden;}
+			#banner{position: relative;}
+			#banner-pic li{display: none;width: 100%;overflow: hidden;}
+			#banner-pic img{width: 100%;height: auto;}
+			#banner-pic li.selected{display: block;}
+			#banner-text{width: 300px;position: absolute;top: 80px;right: 100px;z-index: 99999;background: rgba(0,0,0,0.6);border-radius: 9px;text-align: center;}
+			#banner-text li{display: block;margin: 10px auto;}
+			#banner-text a{background: url(img/zuobai.png) no-repeat;background-position: left top;background-size: contain;width: 100%;display: block;color: rgb(255,255,255);opacity: 0.5;}
+			#banner-text p{position: absolute;bottom: 0px;right: 350px;display: none;color: green;font-size: 30px;}
+			#banner-text p.show{display: block;}
+			#banner-text a.selected-a{color: red;opacity: 1;}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<header>
+				
+			</header>
+			<div id="banner">
+				<div id="banner-pic">
+					<ul>
+						<li class="selected"><img src="img/f60d096651dd4475a6feed7e1e6f5263.jpg"/></li>
+						<li><img src="img/44aefa575cf6438aacebffa68aa7bedd.jpg"/></li>
+						<li><img src="img/3b7afb8042414aa5ac899ac8f1512ab9.jpg"/></li>
+					</ul>
+				</div>
+				<div id="banner-text">
+					<ul>
+						<li><a href="javascript:;" class="selected-a">梦想的声音:老萧神曲燃爆全场</a><!--<p>老萧神曲燃爆全场</p>--></li>							
+						<li><a href="javascript:;">超模:欢欢时装周遭哄抢成秀霸</a><!--<p>欢欢时装周遭哄抢成秀霸</p>--></li>
+						<li><a href="javascript:;">灵魂摆渡3:结局赵吏去向成谜</a><!--<p>结局赵吏去向成谜</p>--></li>
+					</ul>
+				</div>
+			</div>
+			
+			
+			<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					
+				</div>
+				<div class="col-md-6">
+					<div id="owl-slide" class="owl-carousel">
+						<div class="item"><img class="owl-img" id="img1" src=""/></div>
+						<div class="item"><img class="owl-img" id="img2" src=""/></div>
+						<div class="item"><img class="owl-img" id="img3" src=""/></div>
+					</div>
+				</div>
+			</div>
+			</div>
+			<div id="test">
+				<img src="img/20160131132743_YyHAk.jpeg" id="test-img" style="width: 200px;height: auto;"/>
+				<select id="sel">
+					<option value="img/20160306084223_NmRsx.jpeg">1</option>
+					<option value="img/22550154K-0.jpg">2</option>
+				</select>
+			</div>
+			<div id="preloader">
+				<div id="spinner">
+					
+				</div>
+			</div>
+		</div>
+		
+		<script src="../you/public/js/jquery2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="owl/owl-carousel/owl.carousel.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(window).load(function(){
+				setTimeout(function(){
+					$('#preloader').fadeOut(500);
+				},1000)
+				
+			})
+			$(function(){
+//				jquery实现图片select更新
+//				$('#sel').change(function(){
+////					alert($(this).val())
+//					$('#test-img').attr('src',$(this).val());
+//				})
+//				js实现select图片更新
+				var img=document.getElementById('test-img')
+				var sel=document.getElementById('sel')
+				sel.addEventListener('change',function(){
+					img.src=this.value;
+				})
+				
+				var i=0;
+				var timepic=null;
+				function a_noselected(){
+					$('#banner-text a').each(function(){
+							if($(this).hasClass('selected-a'))	$(this).removeClass('selected-a');
+						})
+				}
+				function pic_noselected(){
+					$('#banner-pic li').each(function(){
+						if($(this).hasClass('selected'))	$(this).removeClass('selected');
+					})
+				}
+				function pic_show(index){
+					$('#banner-pic li').eq(index).addClass('selected');
+				}
+				function auto(){
+					timepic=setInterval(function(){				
+						var piclength=$('#banner-pic li').length;
+						pic_noselected();
+						a_noselected()
+						pic_show(i);
+						$('#banner-text a').eq(i).addClass('selected-a');
+						i++;
+						if(i==piclength) i=0;
+					},2000)
+				}
+				auto();
+				$('#banner-text a').on('mouseover',function(){
+					clearInterval(timepic)					
+					a_noselected();
+					$(this).addClass('selected-a');					
+				})
+				$('#banner-text a').on('mouseout',function(){
+					auto();
+					hidep();
+				})
+				function hidep(){
+					$('#banner-text p').each(function(){
+						if($(this).hasClass('show'))	$(this).removeClass('show');
+					})
+				}
+				$('#banner-text a').on('click',function(){
+					hidep();
+					pic_noselected();
+					a_noselected();
+					$(this).addClass('selected-a');
+					$(this).parent().find('p').addClass('show');
+					var j=$(this).parent().index();
+					pic_show(j);
+				})
+				$('#owl-slide').owlCarousel({
+					items: 1,
+					slideSpeed: 300,
+					autoPlay: true,
+					autoPlayTimeout: 1000,
+					autoPlayHoverPause: true
+				})
+			})
+		</script>
+	</body>
+</html>

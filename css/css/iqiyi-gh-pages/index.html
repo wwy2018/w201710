@@ -1,0 +1,777 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>仿爱奇艺首页</title>
+<link href="css/index.css" type="text/css" rel="stylesheet" />
+<script src="js/index.js" type="text/javascript"></script>
+<script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+<!--顶部开始-->
+<div id="top_out">
+	<div id="top">
+    	<a class="iqiyi_logo" href="http://www.iqiyi.com/"></a>
+    	<a class="top_ppbxd" href="http://www.iqiyi.com/"></a>
+        <input value="美人鱼" type="text" class="txt1 one"/>
+        <input type="button" class="btn1" />
+        <ul>
+			<li><a class="one" href="javascript:;">登录</a></li>        
+			<li><a class="one" href="javascript:;">注册</a></li>        
+			<li><a class="one" href="javascript:;">开通VIP</a></li>        
+			<li>
+            	<div id="upload" class="upload">
+                	<a class="two" href="javascript:;">上传<i></i></a>
+                </div>
+                <div id="upload_hidden" class="upload_hidden">
+                	<i></i>
+                	<ul>
+                    	<li><a href="javascript:;">上传视频</a></li>
+                    	<li><a href="javascript:;">制作视频</a></li>
+                    	<li><a href="javascript:;">我怕的空间</a></li>
+                    	<li><a href="javascript:;">视频管理</a></li>
+                    	<li><a href="javascript:;">流量分析</a></li>
+                    	<li><a href="javascript:;">申请成分</a></li>
+                    </ul>
+               	</div>
+            </li>        
+			<li><a class="three" href="javascript:;">下载客户端</a></li>        
+			<li>
+            	<div id="message" class="message">
+            		<a class="four" href="javascript:;">消息<i></i></a>
+            	</div>
+                <div class="message_hidden" id="message_hidden">
+                	<i></i>
+                    <div class="top">
+                        <ul>	
+                    		<li>更新提醒</li>
+                    		<li class="spec">用户推荐</li>
+                    		<li>系统通知</li>
+                    	</ul>
+                    </div>
+                    <div class="center">
+                    	<span>您还没有收到新的更新消息</span>
+                        <span>暂时还没有新的推荐</span>
+                        <span id="spec">
+                        	<p>您还没有登录</p>
+                            <p>您<a href="javascript:;">登录</a>后可以查看完整的通知列表</p>
+                        </span>
+                    </div>
+                    <div class="bottom"><a href="javascript:;">查看更多</a></div>
+               	</div>
+            </li>        
+			<li>
+            	<div id="history" class="history">
+                    <a class="four" href="javascript:;">播放记录<i></i></a>
+                </div>
+                <div class="history_hidden" id="history_hidden">
+                	<i></i>
+                    <div class="top clearfix"><span>过滤短视频</span></div>
+                    <div class="center">
+                    	<span>暂无长视频（电视剧、纪录片、动漫、综艺、电影）播放记录，<a href="*">查看全部</a></span>
+                    </div>
+                    <div class="bottom"><a href="javascript:;">查看更多></a></div>
+                </div>
+            </li>        
+       	</ul>
+    </div>
+</div>
+<!--顶部结束-->
+
+<!--图片文字列表开始-->
+<div id="bg">
+    <div id="bg_pic">
+        <ul>
+            <li class="selected" style="background-image:url(img/bg-1.jpg);"></li>
+            <li style="background-image:url(img/bg-2.jpg);"></li>
+            <li style="background-image:url(img/bg-3.jpg);"></li>
+            <li style="background-image:url(img/bg-4.jpg);"></li>
+            <li style="background-image:url(img/bg-5.jpg);"></li>
+            <li style="background-image:url(img/bg-6.jpg);"></li>
+            <li style="background-image:url(img/bg-7.jpg);"></li>
+            <li style="background-image:url(img/bg-8.jpg);"></li>
+            <li style="background-image:url(img/bg-9.jpg);"></li>
+            <li style="background-image:url(img/bg-10.jpg);"></li>
+        </ul>
+    </div>
+    <div id="bg_txt">
+        <ul>
+            <li><a href="javascript:;" class="selected">跑男：邓超陈赫互拼吓懵鹿晗</a></li>
+            <li><a href="javascript:;">余罪: 张一山变卧底玩无间道</a></li>
+            <li><a href="javascript:;">最好的我们: 重返青春好时光</a></li>
+            <li><a href="javascript:;">废柴兄弟4：无疯不起浪</a></li>
+            <li><a href="javascript:;">相爱吧：清新CP水下互吻</a></li>
+            <li><a href="javascript:;">那年青春:刘婷肖小军互相扶持</a></li>
+            <li><a href="javascript:;">看见你的声音：容祖儿遇旧爱</a></li>
+            <li><a href="javascript:;">大学生来了:汪东城大秀人鱼线</a></li>
+            <li><a href="javascript:;">五月十大热播电影总有你的菜</a></li>
+            <li class="spec"><a href="javascript:;">冠军：梁文冲球技征服贾乃亮</a></li>
+        </ul>
+    </div>
+</div>
+<!--图片文字列表结束-->
+
+<!--中间导航开始-->
+<div id="nav_bg">
+    <div id="nav" class="clearfix">
+        <ul class="nav_one clearfix">           
+ 			<i></i>
+        	<li><a href="*">娱乐</a></li>
+        	<li><a href="*">体育</a></li>
+        	<li><a href="*">资讯</a></li>
+        </ul>
+        <ul class="nav_two">
+            <i></i>
+        	<li><a href="*">电影</a></li>
+        	<li><a href="*">电视剧</a></li>
+        	<li><a href="*">片花</a></li>
+        	<li><a href="*">综艺</a></li>
+        	<li><a href="*">微电影</a></li>
+        	<li><a href="*">脱口秀</a></li>
+        </ul>
+        <ul class="nav_three">
+            <i></i>
+        	<li><a href="*">动漫</a></li>
+        	<li><a href="*">生活</a></li>
+        	<li><a href="*">少儿</a></li>
+        	<li><a href="*">母婴</a></li>
+        	<li><a href="*">教育</a></li>
+        	<li><a href="*">健康</a></li>
+        </ul>
+        <ul class="nav_four">
+            <i></i>
+        	<li><a href="*">音乐</a></li>
+        	<li><a href="*">搞笑</a></li>
+        	<li><a href="*">时尚</a></li>
+        	<li><a href="*">原创</a></li>
+        	<li><a href="*">旅游</a></li>
+        	<li><a href="*">拍客</a></li>
+        </ul>
+        <ul class="nav_five">
+            <i></i>
+        	<li><a href="*">财经</a></li>
+        	<li><a href="*">军事</a></li>
+        	<li><a href="*">科技</a></li>
+        	<li><a href="*">公益</a></li>
+        	<li><a href="*">汽车</a></li>
+        	<li><a href="*">纪录片</a></li>
+        </ul>
+        <ul class="nav_six">
+            <i></i>
+        	<li><a href="*">风云榜</a></li>
+        	<li><a href="*">奇秀直播</a></li>
+        	<li><a href="*">全网影视</a></li>
+        	<li><a href="*">直播中心</a></li>
+        	<li><a href="*">爱奇艺搜索</a></li>
+        	<li><a href="*">应用商店</a></li>
+        </ul>
+        <ul class="nav_seven">
+            <i></i>
+        	<li><a href="*">游戏视频</a></li>
+        	<li><a href="*">大头频道</a></li>
+        	<li><a href="*">爱奇艺游戏</a></li>
+        	<li><a href="*">爱频道</a></li>
+        	<li><a href="*">爱奇艺商城</a></li>
+        	<li><a href="*">个人中心</a></li>
+        </ul>
+        <ul class="nav_eight"><a href="*"></a></ul>
+    </div>
+</div>
+<!--中间导航结束-->
+
+<!--今日焦点开始-->
+<div id="focus" class="clearfix">
+	<div class="one">
+    	<h2>今日焦点<span>更多></span><a href="*">浙江站</a></h2>
+        <h3><a href="*">新一轮强降雨来袭 长江中下游多地有暴雨</a></h3>
+        <ul class="clearfix">
+            <li><i></i><a href="javascript:;">养老金出现亏空?人社部:收大于支结存超3.9万亿</a></li>
+            <li><i></i><a href="javascript:;">少年偷渡迪拜行乞被抓</a><a href="javascript:;">湖北化工厂爆炸冒浓烟</a></li>
+            <li><i></i><a href="javascript:;">天津武警维稳演习</a><a href="javascript:;">数百"暴徒"模拟冲击政府</a></li>
+            <li><i></i><a href="javascript:;">观点PK:  大学生为减压砸烂1吨西瓜，你怎么看</a></li>
+            <li><i></i><a href="javascript:;">女大学生深陷微信红包赌博 一年发出200万红包</a></li>
+            <li><i></i><a href="javascript:;">NBA勇士抢七逆转胜雷霆</a><a href="javascript:;">卧铺大巴藏3百多斤蛇</a></li>
+        </ul>
+        <div class="one_pic1">
+            <a href="javascript:;"><span>赛车翻转5圈撞毁 车手无恙</span></a>
+        </div>
+        <div class="one_pic2">
+            <a href="javascript:;"><img src="http://pic9.qiyipic.com/image/20160531/09/92/v_110475862_m_601_m2_180_101.jpg"; /><span>面包车等红灯时掉出3孩子</span></a>
+       	</div>
+    </div>
+    <div class="two">
+    	<div class="top">
+        	<a href="javascript:;" class="btn-left"></a>
+        	<a class="focus-two-pic" href="javascript:;"><img class="selected" src="img/focus_two_pic1.jpg"; /></a>
+            <a class="focus-two-pic" href="javascript:;"><img src="img/focus_two_pic2.jpg"; /></a>
+            <div class="top_bg">
+            	<i></i>
+                <a href="javascript:;"><span class="selected">吃生马肉？熊本熊居然这么重口</span></a>
+                <a href="javascript:;"><span>张天爱实力出演《陈白露》软萌惹人爱</span></a>
+            </div>
+        	<a href="javascript:;" class="btn-right"></a>
+        </div>
+   		<ul>
+        	<li><i></i><a href="jacascript:;">袁弘张歆艺大婚甜蜜拥吻</a><a href="jacascript:;">女方发文表白:谢谢爱我</a></li>
+        	<li><i></i><a href="jacascript:;">超模秦舒培疑婚内出轨陈冠希</a><a href="jacascript:;"> 杨幂谈为何不晒娃</a></li>
+        	<li><i></i><a href="jacascript:;">独家全程:宋仲基广州FM</a><a href="jacascript:;">回顾:XIUMIN新片发布会</a></li>
+        	<li><i></i><a href="jacascript:;">胡歌坐镇张歆艺袁弘古堡婚礼</a><a href="jacascript:;">歌手薛之谦回归</a></li>
+        	<li><i></i><a href="jacascript:;">益智玩具专场</a><a href="jacascript:;">来伊份粽情粽意礼盒 33.9包邮</a></li>
+        </ul>
+    </div>
+    <div class="three">
+    	<a href="javascript:;"><img src="img/focus_three_pic1.jpg"; /><span>邓超模仿Baby暴力撕纸箱</span></a>
+    	<a href="javascript:;"><img src="img/focus_three_pic2.jpg"; /><span>不想长大 童年追忆</span></a>
+    	<a href="javascript:;"><img src="img/focus_three_pic3.jpg"; /><span>给小公主的一首歌</span></a>
+    	<a href="javascript:;"><img src="img/focus_three_pic4.jpg"; /><span>他的衣服解放了女性身体</span></a>
+    	<a class="spec" href="javascript:;"><img src="img/focus_three_pic5.jpg"; /><span>X战警天启 变种人打群架</span></a>
+    	<a class="spec" href="javascript:;"><img src="img/focus_three_pic6.jpg"; /><span>中韩美女街头卸妆大作战</span></a>
+    </div>
+</div>
+<!--今日焦点结束-->
+
+<!--综艺开始-->
+<div id="variety" class="clearfix">
+	<div class="left">
+    	<div class="top">
+        	<h2>综艺</h2>
+            <span>更多 ></span>
+            <ul>
+            	<li class="spec"><a href="javascript:;">奔跑吧兄弟第4季</a></li>
+            	<li><a href="javascript:;">奇葩说3</a></li>
+            	<li><a href="javascript:;">大学生来了</a></li>
+            	<li><a href="javascript:;">十三亿分贝</a></li>
+            	<li><a href="javascript:;">韩国综艺</a></li>
+            </ul>
+        </div>
+        <div class="bottom">
+        	<div class="one">
+                <a href="javascript:;" class="btn-left"></a>
+            	<a href="javascript:;"><img class="selected" src="img/variety_left_1.jpg" /></a>
+                <div class="variety_p selected">
+                    <p><a class="a1" href="javascript:;">奔跑吧兄弟第4季</a></p>
+              		<p><a class="a2" href="javascript:;">看呆！硬汉张涵予竟发嗲 超鹿父子辣椒体验爽翻天</a></p>
+                </div>
+            	<a href="javascript:;"><img src="img/variety_left_2.jpg" /></a>
+                <div class="variety_p">
+              		<p><a class="a1" href="javascript:;">大牌对王牌</a></p>
+              		<p><a class="a2" href="javascript:;">仓木麻衣犯懵遭喷 朴宰范秀飞毛腿</a></p>
+                </div>
+                <a href="javascript:;" class="btn-right"></a>
+            </div>
+            <div class="two">
+            	<div>
+                	<img src="img/variety_left_two_1.jpg" width="180"/>
+                    <a href="javascript:;">非凡搭档</a>
+                    <p>李小鹏黎明再现《甜蜜蜜》</p>
+                </div>
+            	<div>
+                	<img src="img/variety_left_two_2.jpg" width="180"/>
+                    <a href="javascript:;">笑傲帮</a>
+                    <p>桥段小沈龙实力嘲讽相亲奇葩女</p>
+                </div>
+            	<div>
+                	<img src="img/variety_left_two_3.jpg" width="180"/>
+                    <a href="javascript:;">花样姐姐</a>
+                    <p>Henry大眼仔输比赛露宿南极男</p>
+                </div>
+            	<div>
+                	<img src="img/variety_left_two_4.jpg" width="180"/>
+                    <a href="javascript:;">年代秀</a>
+                    <p>唐禹哲变情话机表白唐艺昕</p>
+                </div>
+            	<div>
+                	<img src="img/variety_left_two_5.jpg" width="180"/>
+                    <a href="javascript:;">来吧冠军</a>
+                    <p>游戏黑洞Ella打球惊慌所有人</p>
+                </div>
+            	<div>
+                	<img src="img/variety_left_two_6.jpg" width="180"/>
+                    <a href="javascript:;">Happy Together</a>
+                    <p>乐童音乐家争中心引爆笑</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+    	<div class="top">
+        	<h2>精彩推荐</h2>
+            <span>更多</span>
+        </div>
+        <div class="bottom">
+        	<img src="img/variety_right.jpg" width="180" />
+            <p>俊河明秀大尺度同人小说</p>
+            <ul>
+            	<li><a href="javascript:;">薛之谦:我爱你和你没关系</a></li>
+                <li><a href="javascript:;">重庆言子PK成都方言</a></li>
+                <li><a href="javascript:;">曹格林更新组队战卡卡</a></li>
+                <li><a href="javascript:;">恶作剧之吻初恋回忆杀</a></li>
+                <li><a href="javascript:;">CHEN秀超能力遭调侃</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--综艺结束-->
+
+<!--强档推荐开始-->
+<div id="recommend">
+	<div class="top">
+    	<a href="javascript:;">
+            <h2>强档推荐</h2>
+            <span>进入跑4专题 ></span>
+        </a>
+    </div>
+    <div class="bottom clearfix">
+    	<div>
+        	<a href="javascript:;"><img src="img/recommoend_1.jpg" width="180"</a>
+            <i></i>
+            <span class="times">06-03期</span>
+            <p>
+                <span>跑男回顾</span>
+                <a href="javascript:;">完整版：郑恺卖萌“告白”Baby</a>
+            </p>
+        </div>
+    	<div>
+        	<a href="javascript:;"><img src="img/recommoend_2.jpg" width="180"</a>
+            <i></i>
+            <span class="times">06-03期</span>
+            <p>
+                <span>跑男来了</span>
+                <a href="javascript:;">邓超曝李晨办婚礼愁白我头</a>
+            </p>
+        </div>
+    	<div>
+        	<a href="javascript:;"><img src="img/recommoend_3.jpg" width="180"</a>
+            <i></i>
+            <span class="times">06-03期</span>
+            <p>
+                <span>奔跑吧小鹿</span>
+                <a href="javascript:;"> 鹿晗也会犯花痴！</a>
+            </p>
+        </div>
+    	<div>
+        	<a href="javascript:;"><img src="img/recommoend_4.jpg" width="180"</a>
+            <i></i>
+            <span class="times">05-31期</span>
+            <div class="diy"></div>
+            <p>
+                <span>大学生来了</span>
+                <a href="javascript:;">周二档：薛之谦叫板四川流川枫</a>
+            </p>
+        </div>
+    	<div>
+        	<a href="javascript:;"><img src="img/recommoend_5.jpg" width="180"</a>
+            <i></i>
+            <span class="times">06-02期</span>
+            <div class="diy"></div>
+            <p>
+                <span>大学生来了</span>
+                <a href="javascript:;">周四档：薛之谦哽咽演唱《方圆几里》</a>
+            </p>
+        </div>
+    	<div>
+        	<a href="javascript:;"><img src="img/recommoend_6.jpg" width="180"</a>
+            <p>
+                <span>十三亿分贝</span>
+                <a href="javascript:;">重庆话PK成都话 决战麻辣之巅</a>
+            </p>
+        </div>
+    </div>
+</div>
+<!--强档推荐结束-->
+
+<!--脱口秀开始-->
+<div id="talk_show" class="clearfix">
+	<div class="top">
+        <a class="title" href="javascript:;">
+            <h2>脱口秀</h2>
+            <span>更多></span>
+        </a>
+        <a href="javascript:;">晚安 朋友圈</a>
+        <i></i>
+        <a href="javascript:;">晓松奇谈</a>
+    </div>
+    <div class="bottom">
+    	<div>
+    		<a href="javascript:;"><img src="img/talk_show_1.jpg"</a>
+            <i></i>
+            <span class="times">06-04期</span>
+            <p>
+            	<a href="javascript:;">娜就这么说</a>
+                <span>大集锦！谢娜黑蔡少芬遭其拉黑</span>
+            </p>
+        </div>
+    	<div>
+    		<a href="javascript:;"><img src="img/talk_show_2.jpg"</a>
+            <i></i>
+            <span class="times">06-02期</span>
+            <p>
+            	<a href="javascript:;">四大名助</a>
+                <span>宝宝像混血 老爸被怀疑戴绿帽</span>
+            </p>
+        </div>
+    	<div>
+    		<a href="javascript:;"><img src="img/talk_show_3.jpg"</a>
+            <i></i>
+            <span class="times">06-03期</span>
+            <div class="diy"></div>
+            <p>
+            	<a href="javascript:;">晓松奇谈</a>
+                <span>回忆大陆音乐十年困难时期</span>
+            </p>
+        </div>
+    	<div>
+    		<a href="javascript:;"><img src="img/talk_show_4.jpg"</a>
+            <i></i>
+            <span class="times">06-02期</span>
+            <p>
+            	<a href="javascript:;">今晚80后脱口秀</a>
+                <span>老司机带你解析嘿嘿嘿的新套路</span>
+            </p>
+        </div>
+    	<div>
+    		<a href="javascript:;"><img src="img/talk_show_5.jpg"</a>
+            <i></i>
+            <span class="times">06-03期</span>
+            <p>
+            	<a href="javascript:;">非正式会谈</a>
+                <span>歪果仁咋说中国绕口令你造吗</span>
+            </p>
+        </div>
+    	<div>
+    		<a href="javascript:;"><img src="img/talk_show_6.jpg"</a>
+            <i></i>
+            <span class="times">06-02期</span>
+            <p>
+            	<a href="javascript:;">暴走大事件</a>
+                <span>sunshine组合出专辑 屠杀降临</span>
+            </p>
+        </div>
+    </div>
+</div>
+<!--脱口秀结束-->
+
+<!--隐藏的导航条开始-->
+<div id="fixed_top_out">
+	<div id="fixed_top">
+    	<a class="iqiyi_logo" href="http://www.iqiyi.com/"></a>
+    	<a id="fixed_nav_btn" class="top_ppbxd" href="javascript:;"></a>
+        <div id="fixed_nav_bg">
+            <div id="fixed_nav" class="clearfix">
+                <ul class="nav_one clearfix">           
+                    <i></i>
+                    <li><a href="*">娱乐</a></li>
+                    <li><a href="*">体育</a></li>
+                    <li><a href="*">资讯</a></li>
+                </ul>
+                <ul class="nav_two">
+                    <i></i>
+                    <li><a href="*">电影</a></li>
+                    <li><a href="*">电视剧</a></li>
+                    <li><a href="*">片花</a></li>
+                    <li><a href="*">综艺</a></li>
+                    <li><a href="*">微电影</a></li>
+                    <li><a href="*">脱口秀</a></li>
+                </ul>
+                <ul class="nav_three">
+                    <i></i>
+                    <li><a href="*">动漫</a></li>
+                    <li><a href="*">生活</a></li>
+                    <li><a href="*">少儿</a></li>
+                    <li><a href="*">母婴</a></li>
+                    <li><a href="*">教育</a></li>
+                    <li><a href="*">健康</a></li>
+                </ul>
+                <ul class="nav_four">
+                    <i></i>
+                    <li><a href="*">音乐</a></li>
+                    <li><a href="*">搞笑</a></li>
+                    <li><a href="*">时尚</a></li>
+                    <li><a href="*">原创</a></li>
+                    <li><a href="*">旅游</a></li>
+                    <li><a href="*">拍客</a></li>
+                </ul>
+                <ul class="nav_five">
+                    <i></i>
+                    <li><a href="*">财经</a></li>
+                    <li><a href="*">军事</a></li>
+                    <li><a href="*">科技</a></li>
+                    <li><a href="*">公益</a></li>
+                    <li><a href="*">汽车</a></li>
+                    <li><a href="*">纪录片</a></li>
+                </ul>
+                <ul class="nav_six">
+                    <i></i>
+                    <li><a href="*">风云榜</a></li>
+                    <li><a href="*">奇秀直播</a></li>
+                    <li><a href="*">全网影视</a></li>
+                    <li><a href="*">直播中心</a></li>
+                    <li><a href="*">爱奇艺搜索</a></li>
+                    <li><a href="*">应用商店</a></li>
+                </ul>
+                <ul class="nav_seven">
+                    <i></i>
+                    <li><a href="*">游戏视频</a></li>
+                    <li><a href="*">大头频道</a></li>
+                    <li><a href="*">爱奇艺游戏</a></li>
+                    <li><a href="*">爱频道</a></li>
+                    <li><a href="*">爱奇艺商城</a></li>
+                    <li><a href="*">个人中心</a></li>
+                </ul>
+                <ul class="nav_eight"><a href="*"></a></ul>
+            </div>
+        </div>
+
+        <input value="美人鱼" type="text" class="txt1 one"/>
+        <input type="button" class="btn1" />
+        <ul>
+			<li><a class="one" href="javascript:;">登录</a></li>        
+			<li><a class="one" href="javascript:;">注册</a></li>        
+			<li><a class="one" href="javascript:;">开通VIP</a></li>        
+			<li>
+            	<div id="fixed_upload" class="upload">
+                	<a class="two" href="javascript:;">上传<i></i></a>
+                </div>
+                <div id="fixed_upload_hidden" class="upload_hidden">
+                	<i></i>
+                	<ul>
+                    	<li><a href="javascript:;">上传视频</a></li>
+                    	<li><a href="javascript:;">制作视频</a></li>
+                    	<li><a href="javascript:;">我怕的空间</a></li>
+                    	<li><a href="javascript:;">视频管理</a></li>
+                    	<li><a href="javascript:;">流量分析</a></li>
+                    	<li><a href="javascript:;">申请成分</a></li>
+                    </ul>
+               	</div>
+            </li>        
+			<li><a class="three" href="javascript:;">下载客户端</a></li>        
+			<li>
+            	<div id="fixed_message" class="message">
+            		<a class="four" href="javascript:;">消息<i></i></a>
+            	</div>
+                <div class="message_hidden" id="fixed_message_hidden">
+                	<i></i>
+                    <div class="top">
+                        <ul>	
+                    		<li>更新提醒</li>
+                    		<li class="spec">用户推荐</li>
+                    		<li>系统通知</li>
+                    	</ul>
+                    </div>
+                    <div class="center">
+                    	<span>您还没有收到新的更新消息</span>
+                        <span>暂时还没有新的推荐</span>
+                        <span id="spec">
+                        	<p>您还没有登录</p>
+                            <p>您<a href="javascript:;">登录</a>后可以查看完整的通知列表</p>
+                        </span>
+                    </div>
+                    <div class="bottom"><a href="javascript:;">查看更多</a></div>
+               	</div>
+            </li>        
+			<li>
+            	<div id="fixed_history" class="history">
+                    <a class="four" href="javascript:;">播放记录<i></i></a>
+                </div>
+                <div class="history_hidden" id="fixed_history_hidden">
+                	<i></i>
+                    <div class="top clearfix"><span>过滤短视频</span></div>
+                    <div class="center">
+                    	<span>暂无长视频（电视剧、纪录片、动漫、综艺、电影）播放记录，<a href="*">查看全部</a></span>
+                    </div>
+                    <div class="bottom"><a href="javascript:;">查看更多></a></div>
+                </div>
+            </li>        
+       	</ul>
+    </div>
+</div>
+<!--隐藏的导航条结束-->
+
+<!--电影开始-->
+<div id="movie" class="clearfix">
+	<div class="movie_left">
+    	<div class="top">
+            <a class="title" href="javascript:;">
+                <h2>电影</h2>
+                <span>更多></span>
+            </a>
+            <a href="javascript:;">爱奇艺爱电影</a>
+            <i></i>
+            <a href="javascript:;">网络大电影</a>
+            <i></i>
+            <a href="javascript:;">VIP会员</a>
+            <i></i>
+            <a href="javascript:;">上海电影节在线影展</a>
+            <i></i>
+            <a href="javascript:;">爱奇艺科幻片之夜</a>
+        </div>
+        <div class="bottom">
+            <div class="pic">
+                <img src="http://pic8.qiyipic.com/image/20160618/33/84/v_110551226_m_601_m1_180_236.jpg" />
+                <a href="javascript:;">三人行</a>
+                <span>杜琪峰银河二十年力作</span>
+            </div>
+            <div class="pic">
+                <img src="http://pic2.qiyipic.com/image/20160617/b6/49/v_110551899_m_601_180_236.jpg" />
+                <a href="javascript:;">杜琪峰：最后一个江湖大佬</a>
+                <span>杜琪峰银河二十年回归</span>
+            </div>
+            <div class="pic">
+                <img src="http://pic4.qiyipic.com/image/20160401/0b/88/v_110160448_m_601_m2_180_236.jpg" />
+                <a href="javascript:;">澳门风云3</a>
+                <span>发哥华仔爆笑斗赌术</span>
+            </div>
+            <div class="pic">
+                <img src="http://pic4.qiyipic.com/image/20160414/51/53/v_110252516_m_601_m2_180_236.jpg" />
+                <a href="javascript:;">地心营救</a>
+                <span>老牌佐罗矿难重生记</span>
+            </div>
+            <div class="pic">
+                <img src="http://pic5.qiyipic.com/image/20160614/fd/28/v_110263942_m_601_m3_180_236.jpg" />
+                <a href="javascript:;">谍影特工</a>
+                <span>老邦德血战小鲜肉</span>
+            </div>
+            <div class="pic">
+                <img src="http://pic8.qiyipic.com/image/20160617/21/7a/v_110379729_m_601_m2_180_236.jpg" />
+                <a href="javascript:;">北京遇上西雅图之不二情书</a>
+                <span>汤唯吴秀波续异国情缘</span>
+            </div>
+            <div class="pic">
+                <img src="http://pic2.qiyipic.com/image/20160615/85/43/v_110513145_m_601_m1_180_236.jpg" />
+                <a href="javascript:;">魔宫魅影</a>
+                <span>林心如杨佑宁惊悚虐恋</span>
+            </div>
+            <div class="pic">
+                <img src="http://pic6.qiyipic.com/image/20160604/f1/6c/v_110385641_m_601_m3_180_236.jpg" />
+                <a href="javascript:;">谁的青春不迷茫</a>
+                <span>热血和梦想才是真青春</span>
+            </div>
+            <div class="pic">
+                <img src="http://pic5.qiyipic.com/image/20160607/ce/05/v_110502564_m_601_m1_180_236.jpg" />
+                <a href="javascript:;">梦想合伙人</a>
+                <span>姚晨唐嫣郝蕾励志创业</span>
+            </div>
+            <div class="pic">
+                <img src="http://pic0.qiyipic.com/image/20160618/3e/93/v_50151146_m_601_m8_180_236.jpg" />
+                <a href="javascript:;">独立日</a>
+                <span>全民捍卫地球大作战</span>
+            </div>
+        </div>
+    </div>
+    <div class="movie_right">
+    	<div class="top">
+            <a class="title" href="javascript:;">
+                <h2>电影榜</h2>
+                <span>更多></span>
+            </a>
+        </div>
+        <div class="bottom">
+        	<div class="list">
+                <ul>
+                    <li>
+                        <i class="i1 spec">1</i>
+                        <a href="javascript:;">魔宫魅影</a>
+                        <i class="i2 up"></i>
+                    </li>
+                    <li>
+                        <i class="i1 spec">2</i>
+                        <a href="javascript:;">澳门风云3</a>
+                        <i class="i2 up"></i>
+                    </li>
+                    <li>
+                        <i class="i1 spec">3</i>
+                        <a href="javascript:;">谍影特工</a>
+                        <i class="i2 down"></i>
+                    </li>
+                    <li>
+                        <i class="i1">4</i>
+                        <a href="javascript:;">惊天魔盗团</a>
+                        <i class="i2 up"></i>
+                    </li>
+                    <li>
+                        <i class="i1">5</i>
+                        <a href="javascript:;">梦想合伙人</a>
+                        <i class="i2 down"></i>
+                    </li>
+                    <li>
+                        <i class="i1">6</i>
+                        <a href="javascript:;">地心营救</a>
+                        <i class="i2 up"></i>
+                    </li>
+                    <li>
+                        <i class="i1">7</i>
+                        <a href="javascript:;">热血高校</a>
+                        <i class="i2 down"></i>
+                    </li>
+                    <li>
+                        <i class="i1">8</i>
+                        <a href="javascript:;">一路顺疯</a>
+                        <i class="i2 down"></i>
+                    </li>
+                    <li>
+                        <i class="i1">9</i>
+                        <a href="javascript:;">鹿鼎记</a>
+                        <i class="i2"></i>
+                    </li>
+                </ul>
+            </div>
+            <div class="pic">
+                <img src="http://pic1.qiyipic.com/image/20160328/5e/e8/v_108853896_m_601_m4_180_236.jpg" />
+                <a href="javascript:;">忍者神龟：变种时代</a>
+                <span>下水道英雄拯救城市</span>
+            </div>
+        </div>
+	</div>
+
+</div>
+<!--电影结束-->
+
+<!--个人信息-->
+<div id="person_info" class="clearfix">
+	<span>董卫朋</span>
+    <i>|</i>
+	<span>浙江杭州</span>
+    <i>|</i>
+	<span>手机：<strong>15700197181</strong></span>
+    <i>|</i>
+	<span>Email: <strong>imdwpeng@foxmail.com</strong></span>
+    <i>|</i>
+	<span>微信:</span>
+    <img src="img/weixin.png" width="100" alt="微信" title="点我点我点我"/>
+    <div class="big_pic">
+        <img src="img/weixin.png" title="微信：394308395"/>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
