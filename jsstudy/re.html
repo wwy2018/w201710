@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="app">
+    <ul class="moments" :if="mo">
+      <li>{{ mo.content }}</li>
+    </ul>
+  </div>
+  <script>
+    const tagRE = /\{\{((?:.|\n)+?)\}\}/g
+    const hasInterpolation = text => /\{?\{\{(.+?)\}\}\}?/g.test(text)
+    const configuer = {identifier: {bind: `:`}, priority: ['each']}
+    const dependencyRE = /"[^"]*"|'[^']*'|\.\w*[a-zA-Z$_]\w*|\w*[a-zA-Z$_]\w*:|(\w*[a-zA-Z$_]\w*)/g;
+    const globals = [
+      'true', 'false', 'undefined', 'null', 'NaN', 'isNaN', 'typeof', 'in',
+      'decodeURI', 'decodeURIComponent', 'encodeURI', 'encodeURIComponent', 'unescape',
+      'escape', 'eval', 'isFinite', 'Number', 'String', 'parseFloat', 'parseInt',
+    ];
+    var parse = function (str) {
+      if (!tagRE.test(str)) return JSON.stringify(str)
+      const tokens = []
+      let lastIndex = tagRE.lastIndex = 0
+      let index, matched
+      while (matched = tagRE.exec(str)) {
+        index = matched.index
+        if (index > lastIndex) {
+          tokens.push(JSON.stringify(str.slice(lastIndex, index)))
+        }
+        tokens.push(matched[1].trim())
+        lastIndex = index + matched[0].length
+      }
+      if (lastIndex < str.length) {
+        tokens.push(JSON.stringify(str.slice(lastIndex)))
+      }
+      return tokens.join('+')
+    }
+    var Compile = function (template, data = {}) {
+      if (!(this instanceof Compile)) return new Compile(template, data)
+      if (template instanceof Node) data.template = template
+      this.data = data
+      template = this.data.template
+      walk (template, (node, next) => {
+        
+        if (node.nodeType === 1) {
+          const skip = this.elementNodes.call(this, node)
+          return next(skip === false)
+        } else if (node.nodeType === 3) {
+          this.textNodes.call(this, node)
+        }
+        next()
+      })
+      this.view = template
+      template = null
+    }
+    Compile.prototype.elementNodes = function (node) {
+      let attributes = [].slice.call(node.attributes), attrName = ``, attrValue = ``, directiveName = ``
+      if (node.hasAttributes() && this.bindPriority(node)) return false
+      attributes.map(attribute => {
+        attrName = attribute.name
+        attrValue = attribute.value.trim()
+        if (attrName.indexOf(configuer.identifier.bind) == 0 && attrValue !== '') {
+          directiveName = attrName.slice(configuer.identifier.bind.length)
+          this.bindDirective({
+            node, expression: attrValue, name: directiveName
+          })
+          node.removeAttribute(attrName)
+        }else {
+          this.bindAttribute(node, attribute)
+        }
+      })
+    }
+    Compile.prototype.textNodes = function (node) {
+      if (node.textContent.trim() === '') return false
+      this.bindDirective({
+        node,
+        name: 'text',
+        expression: parse(node.textContent)
+      })
+    }
+    Compile.prototype.bindPriority = function (node) {
+      return false
+    }
+    Compile.prototype.bindAttribute = function (node, attribute) {
+      if (!hasInterpolation(attribute.value) || attribute.value.trim() === '') return false
+      this.bindDirective({
+        node, name: 'attribute', expression: parse(attribute.value), attrName: attribute.name
+      })
+    }
+    Compile.prototype.bindDirective = function (data) {
+      data.compile = this
+      new Directive(data)
+    }
+    class Directive {
+      constructor (data = {}) {
+        if (data.name === 'if') data.name = `IF`
+        Object.assign(this, data)
+        Object.assign(this, directives[this.name])
+        this.beforeUpdate && this.beforeUpdate()
+        this.update && this.update(generate(this.expression)(this.compile.data))
+      }
+    }
+    var directives = {
+      IF: {
+        beforeUpdate () {
+          this.holder = document.createComment('if')
+          this.node.parentNode.replaceChild(this.holder, this.node)
+        },
+        update (show) {
+          if (show) this.holder.parentNode.replaceChild(this.node, this.holder)
+        }
+      },
+      show: {
+        update (show) {
+            this.node.style.display = show ? `block` : `none`
+        }
+      },
+      text: {
+        update (value) {
+            this.node.textContent = value
+        }
+      }
+    }
+    var generate = function (expression) {
+      const dependencies = extractDependencies(expression)
+      let dependenciesCode = ''
+      dependencies.map(dependency => {
+        dependenciesCode += `var ${dependenciesCode} = data["${dependency}"]`
+      })
+      return new Function(`data`, `${dependenciesCode} return ${expression}`)
+    }
+    var extractDependencies = function (expression) {
+      const dependencies = []
+      expression.replace(dependencyRE, (match, dependency) => {
+        if (dependency !== undefined && dependencies.indexOf(dependency) === -1 && globals.indexOf(dependency) === -1) {
+          dependencies.push(dependency)
+        }
+        return dependencies
+      })
+    }
+    var walk = function (el, action, done) {
+      const nodes = el.childNodes && [].slice.call(el.childNodes)
+      done = done || function () {}
+      action = action || function () {}
+      function next (skip) {
+        if (skip || nodes.length === 0) return done()
+        walk(nodes.shift(), action, next)
+      }
+      action(el, next)
+    }
+    // temp
+    const data = {
+        mo: {
+          content: 'mo'
+        }
+    };
+    var initCompile = function (co) {
+      co.$Compile = Compile
+      co.view = co.$Compile(co.options.template, {
+        data: co.options.data
+      }).view
+    }
+    var init = function (co)  {
+      initCompile(co)
+    }
+    var colon = function (options) {
+      if (!(this instanceof colon)) return new colon(options)
+      this.options = options
+      init(this)
+    }
+    colon({
+      template: document.querySelector('.app'),
+      data,
+      computed: {
+        fullName() {
+          return this.user.firstName + this.user.lastName;
+        },
+      },
+    });
+  </script>
+</body>
+</html>

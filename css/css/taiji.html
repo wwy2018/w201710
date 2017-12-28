@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .taiji{
+      margin: 50px auto 0;
+      height: 200px;
+      width: 200px;
+      animation: run-inner 2s infinite linear;
+    }
+    @keyframes run-inner{
+      0%{
+        transform: rotate(0deg)
+      }
+      25%{
+        transform: rotate(-90deg)
+      }
+      50%{
+        transform: rotate(-180deg)
+      }
+      75%{
+        transform: rotate(-270deg)
+      }
+      100%{
+        transform: rotate(-360deg)
+      }
+    }
+    .a{
+      width: 200px;
+      height: 100px;
+      border: 1px solid #d3d3d3;
+      border-bottom: 0px;
+      border-radius: 100px 100px 0 0;
+      background: #fff;
+      position: relative;
+    }
+    .a::after{
+      content: "";
+      background: #fff;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      position: absolute;
+      top: 72px;
+      left: 147px;
+    }
+    .a .inner{
+      width: 100px;
+      height: 50px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background: #000;
+      border-radius: 50px 50px 0 0;
+    }
+    .b{
+      width: 201px;
+      height: 101px;
+      border: 1px solid #d3d3d3;
+      border-top: 0;
+      border-radius: 0 0 100px 100px;
+      background: #000;
+      position: relative;
+    }
+    .b::after{
+      content: "";
+      background: #000;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 72px;
+      right: 147px;
+    }
+    .b .inner{
+      width: 100px;
+      height: 50px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #fff;
+      border-radius: 0 0 50px 50px;
+    }
+  </style>
+</head>
+<body> 
+  <div class="taiji">
+    <div class="a">
+      <div class="inner"></div>
+    </div>
+    <div class="b">
+      <div class="inner"></div>
+    </div>
+  </div>
+</body>
+</html>

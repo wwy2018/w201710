@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="rotating-heart.css">
+</head>
+<body>
+  <div class="wrap"></div>
+<script src="jq3.2.1.js"></script>
+<script>
+  var wrap=document.getElementsByClassName('wrap')
+  for (var i=0;i<60;i++) {
+    var a = 'a' + i
+    a=document.createElement('div')
+    a.setAttribute('class', 'el')
+    wrap[0].appendChild(a)
+  }
+</script>
+</body>
+</html>

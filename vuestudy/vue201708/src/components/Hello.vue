@@ -1,17 +1,16 @@
 <template>
-  <div class="hello">
-    
-    <ul v-show="false">
+  <!-- <div class="hello" v-infi-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10"> -->
+  <div>
+    <!-- <ul v-show="false">
       <li v-for="img in list">
         <img v-lazy="imgSrc + img">
       </li>
     </ul>
-    <div v-transfer v-show="t">
+    <div v-dom-portal v-show="t">
       <div class="t">1111</div>
     </div>
     <button @click="show">show</button>
     <button @click="hide">click</button>
-    <!-- parallax -->
     <div id="scene">
       <div data-depth="0.2">My first Layer!</div>
       <div data-depth="0.6">My second Layer!</div>
@@ -21,15 +20,22 @@
     <long-touch @onTouch="touch">
       <div slot="slot">aaaaaaaaaa</div>
     </long-touch>
+    <div class="infinite-loading-container">
+      <loading spinner="BUBBLES"/>
+    </div>
+    <button @click="tran">trans</button>
+    <transition name="fade">
+      <div v-if="trans">tttttttttt</div>
+    </transition> -->
+    <security-code v-model="code"></security-code>
   </div>
 </template>
 
 <script>
 /* eslint-disable */
 import Parallax from 'parallax-js'
-import w from 'wwy2017'
-var longTouch = w.longTouch
-console.log(longTouch)
+import {LongTouch, Loading} from 'wwy2017'
+import SecurityCode from './S.vue'
 export default {
   name: 'hello',
   data () {
@@ -42,13 +48,22 @@ export default {
         '4.png',
         '5.png'
       ],
-      t: false
+      t: false,
+      busy: false,
+      spinner: 'default',
+      trans: false,
+      code: ''
     }
   },
   components: {
-    longTouch
+    LongTouch,
+    Loading,
+    SecurityCode
   },
   methods: {
+    tran () {
+      this.trans = !this.trans
+    },
     touch () {
       console.log('ttt')
     },
@@ -65,19 +80,24 @@ export default {
     para () {
       var scene = document.getElementById('scene')
       var parallaxInstance = new Parallax(scene)
+    },
+    loadMore () {
+      this.busy=true
+      console.log('aaa')
+      this.busy=false
     }
   },
   created () {
-    this.test()
+    // this.test()
   },
   mounted () {
-    this.para()
+    // this.para()
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang="less">
 @import '~wwy2017/src/css/ripple.css';
 h1, h2 {
   font-weight: normal;
@@ -95,5 +115,28 @@ li {
 
 a {
   color: #42b983;
+}
+
+@deep: ~'>>>';
+
+.infinite-loading-container {
+  clear: both;
+  text-align: center;
+  @{deep} *[class^=loading-] {
+    @size: 28px;
+    display: inline-block;
+    margin: 15px 0;
+    width: @size;
+    height: @size;
+    font-size: @size;
+    line-height: @size;
+    border-radius: 50%;
+  }
+}
+.fade-enter-active, .fade-leave-active{
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to{
+  opacity: 0;
 }
 </style>

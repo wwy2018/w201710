@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                
+                ul{
+                        position: fixed;
+                        left:20px;
+                        display: none;
+                }
+                .change{
+                        position: fixed;
+                        left:20px;
+                        top: -500px;
+                }
+                        li{
+                                width: 40px;
+                                height: 20px;
+                                text-align: center;
+                                line-height: 20px;
+                                list-style: none;
+                                border:1px solid rgba(0,0,0,0.8) ;
+                                background: skyblue;
+                        }
+                        button{
+                                margin: 200px;
+                        }
+                        #b11{
+                                width: 100%;
+                                height: 2000px;
+                                background: greenyellow;
+                        }
+                        .xxx{
+                                background: orange;
+                        }
+                </style>
+        </head>
+        <body>
+                <div id="b11">
+                        
+
+                <ul style="top: -500px;" id="ulx">
+                        <li id="li1">1</li>
+                        <li id="li2">2</li>
+                        <li id="li3">3</li>
+                        <li id="li4">4</li>
+                        <li id="li5">5</li>
+                </ul>
+                                </div>
+                <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+                <script>
+                        var ulx=document.getElementById("ulx");
+                        var lix=ulx.getElementsByTagName("li");
+//                        var sTop=document.documentElement.scrollTop;
+                        
+                        $(function(){
+                                $(window).scroll(function(){
+                                        var sTop=$("body").scrollTop();
+                                        console.log($("body").scrollTop()+"px")
+                                        if(sTop>=500){
+                                                if ($('ul').is(":hidden")) {
+                                                        $("ul").show();
+                                                        $("ul").animate({top:"480px"},300).animate({top:"380px"},300);        
+                                                }
+                                        } else {
+                                                if ($('ul').is(":visible")) {
+                                                        $("ul").animate({top :"1000px"},100,function () {
+                                                                $("ul").hide();
+                                                                $("ul").css("top", "-500px");
+                                                        });
+                                                }
+                                        }
+                                })
+                        })
+                                $(window).scroll(function(){
+                                        var sTop=$("body").scrollTop();
+                                        console.log($("body").scrollTop()+"px")
+                                        $("#lix").each(function(){
+                                                alert(111);
+                                                $(this).removeClass("xxx");
+                                        })
+                                        if(sTop>=500&&sTop<700){
+                                                lichange($("#li1"));
+                                        }
+                                        if(sTop>=700&&sTop<900){
+                                                lichange($("#li2"));
+                                        }
+                                        if(sTop>=900&&sTop<1100){
+                                                lichange($("#li3"));
+                                        }
+                                        if(sTop>=1100&&sTop<1300){
+                                                lichange($("#li4"));
+                                        }
+                                        if(sTop>=1300){
+                                                lichange($("#li5"));
+                                        }
+        
+                                })
+                                function lichange(add){
+                                        var sel=add;
+                                        $(sel).addClass("xxx").siblings("li").removeClass("xxx")
+                                }
+                </script>
+        </body>
+</html>

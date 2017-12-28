@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .f1{
+      display: flex;
+      min-height: 200px;
+      flex-wrap: wrap;
+    }
+    .fi{
+      flex: auto;
+      border: 1px solid #000;
+      min-width: 500px;
+    }
+    .fi2{
+      flex: 1 30px;min-width: 20px;background: yellow;
+      min-height: 100px;
+    }
+    .fi3{
+      flex-grow: 2;background: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="f1">
+    <div class="fi"></div>
+    <div class="fi fi2"></div>
+    <div class="fi fi3"></div>
+    <div class="fi"></div>
+    <div class="fi"></div>
+    <div class="fi"></div>
+    <div class="fi"></div>
+    <div class="fi"></div>
+    <div class="fi"></div>
+    <div class="fi"></div>
+  </div>
+</body>
+</html>

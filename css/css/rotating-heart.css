@@ -1,0 +1,708 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+body {
+  background: #123752;
+  position: relative;
+  perspective: 1000px;
+  overflow: hidden;
+  transform-style: preserve-3d; }
+
+.wrap {
+  position: relative;
+  height: 100%;
+  transform-style: inherit; }
+
+.el {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1vmin;
+  height: 15vmin;
+  margin: 15vmin -1vmin 0 0;
+  transform-origin: 50% -15vmin;
+  transform-style: inherit; }
+
+.el::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #326384;
+  transform-origin: 0 100%; }
+
+.el:nth-child(0) {
+  transform: rotatez(0deg) rotatex(0deg); }
+  .el:nth-child(0)::after {
+    animation: rotate0 6s ease-in infinite alternate;
+    animation-delay: 0s; }
+
+@keyframes rotate0 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(1) {
+  transform: rotatez(-6deg) rotatex(0deg); }
+  .el:nth-child(1)::after {
+    animation: rotate1 6s ease-in infinite alternate;
+    animation-delay: -0.2s; }
+
+@keyframes rotate1 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(2) {
+  transform: rotatez(-12deg) rotatex(0deg); }
+  .el:nth-child(2)::after {
+    animation: rotate2 6s ease-in infinite alternate;
+    animation-delay: -0.4s; }
+
+@keyframes rotate2 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(3) {
+  transform: rotatez(-18deg) rotatex(0deg); }
+  .el:nth-child(3)::after {
+    animation: rotate3 6s ease-in infinite alternate;
+    animation-delay: -0.6s; }
+
+@keyframes rotate3 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(4) {
+  transform: rotatez(-24deg) rotatex(0deg); }
+  .el:nth-child(4)::after {
+    animation: rotate4 6s ease-in infinite alternate;
+    animation-delay: -0.8s; }
+
+@keyframes rotate4 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(5) {
+  transform: rotatez(-30deg) rotatex(0deg); }
+  .el:nth-child(5)::after {
+    animation: rotate5 6s ease-in infinite alternate;
+    animation-delay: -1s; }
+
+@keyframes rotate5 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(6) {
+  transform: rotatez(-36deg) rotatex(0deg); }
+  .el:nth-child(6)::after {
+    animation: rotate6 6s ease-in infinite alternate;
+    animation-delay: -1.2s; }
+
+@keyframes rotate6 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(7) {
+  transform: rotatez(-42deg) rotatex(0deg); }
+  .el:nth-child(7)::after {
+    animation: rotate7 6s ease-in infinite alternate;
+    animation-delay: -1.4s; }
+
+@keyframes rotate7 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(8) {
+  transform: rotatez(-48deg) rotatex(0deg); }
+  .el:nth-child(8)::after {
+    animation: rotate8 6s ease-in infinite alternate;
+    animation-delay: -1.6s; }
+
+@keyframes rotate8 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(9) {
+  transform: rotatez(-54deg) rotatex(0deg); }
+  .el:nth-child(9)::after {
+    animation: rotate9 6s ease-in infinite alternate;
+    animation-delay: -1.8s; }
+
+@keyframes rotate9 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(10) {
+  transform: rotatez(-60deg) rotatex(0deg); }
+  .el:nth-child(10)::after {
+    animation: rotate10 6s ease-in infinite alternate;
+    animation-delay: -2s; }
+
+@keyframes rotate10 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(11) {
+  transform: rotatez(-66deg) rotatex(0deg); }
+  .el:nth-child(11)::after {
+    animation: rotate11 6s ease-in infinite alternate;
+    animation-delay: -2.2s; }
+
+@keyframes rotate11 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(12) {
+  transform: rotatez(-72deg) rotatex(0deg); }
+  .el:nth-child(12)::after {
+    animation: rotate12 6s ease-in infinite alternate;
+    animation-delay: -2.4s; }
+
+@keyframes rotate12 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(13) {
+  transform: rotatez(-78deg) rotatex(0deg); }
+  .el:nth-child(13)::after {
+    animation: rotate13 6s ease-in infinite alternate;
+    animation-delay: -2.6s; }
+
+@keyframes rotate13 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(14) {
+  transform: rotatez(-84deg) rotatex(0deg); }
+  .el:nth-child(14)::after {
+    animation: rotate14 6s ease-in infinite alternate;
+    animation-delay: -2.8s; }
+
+@keyframes rotate14 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(15) {
+  transform: rotatez(-90deg) rotatex(0deg); }
+  .el:nth-child(15)::after {
+    animation: rotate15 6s ease-in infinite alternate;
+    animation-delay: -3s; }
+
+@keyframes rotate15 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(16) {
+  transform: rotatez(-96deg) rotatex(0deg); }
+  .el:nth-child(16)::after {
+    animation: rotate16 6s ease-in infinite alternate;
+    animation-delay: -3.2s; }
+
+@keyframes rotate16 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(17) {
+  transform: rotatez(-102deg) rotatex(0deg); }
+  .el:nth-child(17)::after {
+    animation: rotate17 6s ease-in infinite alternate;
+    animation-delay: -3.4s; }
+
+@keyframes rotate17 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(18) {
+  transform: rotatez(-108deg) rotatex(0deg); }
+  .el:nth-child(18)::after {
+    animation: rotate18 6s ease-in infinite alternate;
+    animation-delay: -3.6s; }
+
+@keyframes rotate18 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(19) {
+  transform: rotatez(-114deg) rotatex(0deg); }
+  .el:nth-child(19)::after {
+    animation: rotate19 6s ease-in infinite alternate;
+    animation-delay: -3.8s; }
+
+@keyframes rotate19 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(20) {
+  transform: rotatez(-120deg) rotatex(0deg); }
+  .el:nth-child(20)::after {
+    animation: rotate20 6s ease-in infinite alternate;
+    animation-delay: -4s; }
+
+@keyframes rotate20 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(21) {
+  transform: rotatez(-126deg) rotatex(0deg); }
+  .el:nth-child(21)::after {
+    animation: rotate21 6s ease-in infinite alternate;
+    animation-delay: -4.2s; }
+
+@keyframes rotate21 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(22) {
+  transform: rotatez(-132deg) rotatex(0deg); }
+  .el:nth-child(22)::after {
+    animation: rotate22 6s ease-in infinite alternate;
+    animation-delay: -4.4s; }
+
+@keyframes rotate22 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(23) {
+  transform: rotatez(-138deg) rotatex(0deg); }
+  .el:nth-child(23)::after {
+    animation: rotate23 6s ease-in infinite alternate;
+    animation-delay: -4.6s; }
+
+@keyframes rotate23 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(24) {
+  transform: rotatez(-144deg) rotatex(0deg); }
+  .el:nth-child(24)::after {
+    animation: rotate24 6s ease-in infinite alternate;
+    animation-delay: -4.8s; }
+
+@keyframes rotate24 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(25) {
+  transform: rotatez(-150deg) rotatex(0deg); }
+  .el:nth-child(25)::after {
+    animation: rotate25 6s ease-in infinite alternate;
+    animation-delay: -5s; }
+
+@keyframes rotate25 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(26) {
+  transform: rotatez(-156deg) rotatex(0deg); }
+  .el:nth-child(26)::after {
+    animation: rotate26 6s ease-in infinite alternate;
+    animation-delay: -5.2s; }
+
+@keyframes rotate26 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(27) {
+  transform: rotatez(-162deg) rotatex(0deg); }
+  .el:nth-child(27)::after {
+    animation: rotate27 6s ease-in infinite alternate;
+    animation-delay: -5.4s; }
+
+@keyframes rotate27 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(28) {
+  transform: rotatez(-168deg) rotatex(0deg); }
+  .el:nth-child(28)::after {
+    animation: rotate28 6s ease-in infinite alternate;
+    animation-delay: -5.6s; }
+
+@keyframes rotate28 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(29) {
+  transform: rotatez(-174deg) rotatex(0deg); }
+  .el:nth-child(29)::after {
+    animation: rotate29 6s ease-in infinite alternate;
+    animation-delay: -5.8s; }
+
+@keyframes rotate29 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(30) {
+  transform: rotatez(-180deg) rotatex(0deg); }
+  .el:nth-child(30)::after {
+    animation: rotate30 6s ease-in infinite alternate;
+    animation-delay: -6s; }
+
+@keyframes rotate30 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(31) {
+  transform: rotatez(-186deg) rotatex(0deg); }
+  .el:nth-child(31)::after {
+    animation: rotate31 6s ease-in infinite alternate;
+    animation-delay: -6.2s; }
+
+@keyframes rotate31 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(32) {
+  transform: rotatez(-192deg) rotatex(0deg); }
+  .el:nth-child(32)::after {
+    animation: rotate32 6s ease-in infinite alternate;
+    animation-delay: -6.4s; }
+
+@keyframes rotate32 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(33) {
+  transform: rotatez(-198deg) rotatex(0deg); }
+  .el:nth-child(33)::after {
+    animation: rotate33 6s ease-in infinite alternate;
+    animation-delay: -6.6s; }
+
+@keyframes rotate33 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(34) {
+  transform: rotatez(-204deg) rotatex(0deg); }
+  .el:nth-child(34)::after {
+    animation: rotate34 6s ease-in infinite alternate;
+    animation-delay: -6.8s; }
+
+@keyframes rotate34 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(35) {
+  transform: rotatez(-210deg) rotatex(0deg); }
+  .el:nth-child(35)::after {
+    animation: rotate35 6s ease-in infinite alternate;
+    animation-delay: -7s; }
+
+@keyframes rotate35 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(36) {
+  transform: rotatez(-216deg) rotatex(0deg); }
+  .el:nth-child(36)::after {
+    animation: rotate36 6s ease-in infinite alternate;
+    animation-delay: -7.2s; }
+
+@keyframes rotate36 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(37) {
+  transform: rotatez(-222deg) rotatex(0deg); }
+  .el:nth-child(37)::after {
+    animation: rotate37 6s ease-in infinite alternate;
+    animation-delay: -7.4s; }
+
+@keyframes rotate37 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(38) {
+  transform: rotatez(-228deg) rotatex(0deg); }
+  .el:nth-child(38)::after {
+    animation: rotate38 6s ease-in infinite alternate;
+    animation-delay: -7.6s; }
+
+@keyframes rotate38 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(39) {
+  transform: rotatez(-234deg) rotatex(0deg); }
+  .el:nth-child(39)::after {
+    animation: rotate39 6s ease-in infinite alternate;
+    animation-delay: -7.8s; }
+
+@keyframes rotate39 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(40) {
+  transform: rotatez(-240deg) rotatex(0deg); }
+  .el:nth-child(40)::after {
+    animation: rotate40 6s ease-in infinite alternate;
+    animation-delay: -8s; }
+
+@keyframes rotate40 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(41) {
+  transform: rotatez(-246deg) rotatex(0deg); }
+  .el:nth-child(41)::after {
+    animation: rotate41 6s ease-in infinite alternate;
+    animation-delay: -8.2s; }
+
+@keyframes rotate41 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(42) {
+  transform: rotatez(-252deg) rotatex(0deg); }
+  .el:nth-child(42)::after {
+    animation: rotate42 6s ease-in infinite alternate;
+    animation-delay: -8.4s; }
+
+@keyframes rotate42 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(43) {
+  transform: rotatez(-258deg) rotatex(0deg); }
+  .el:nth-child(43)::after {
+    animation: rotate43 6s ease-in infinite alternate;
+    animation-delay: -8.6s; }
+
+@keyframes rotate43 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(44) {
+  transform: rotatez(-264deg) rotatex(0deg); }
+  .el:nth-child(44)::after {
+    animation: rotate44 6s ease-in infinite alternate;
+    animation-delay: -8.8s; }
+
+@keyframes rotate44 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(45) {
+  transform: rotatez(-270deg) rotatex(0deg); }
+  .el:nth-child(45)::after {
+    animation: rotate45 6s ease-in infinite alternate;
+    animation-delay: -9s; }
+
+@keyframes rotate45 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(46) {
+  transform: rotatez(-276deg) rotatex(0deg); }
+  .el:nth-child(46)::after {
+    animation: rotate46 6s ease-in infinite alternate;
+    animation-delay: -9.2s; }
+
+@keyframes rotate46 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(47) {
+  transform: rotatez(-282deg) rotatex(0deg); }
+  .el:nth-child(47)::after {
+    animation: rotate47 6s ease-in infinite alternate;
+    animation-delay: -9.4s; }
+
+@keyframes rotate47 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(48) {
+  transform: rotatez(-288deg) rotatex(0deg); }
+  .el:nth-child(48)::after {
+    animation: rotate48 6s ease-in infinite alternate;
+    animation-delay: -9.6s; }
+
+@keyframes rotate48 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(49) {
+  transform: rotatez(-294deg) rotatex(0deg); }
+  .el:nth-child(49)::after {
+    animation: rotate49 6s ease-in infinite alternate;
+    animation-delay: -9.8s; }
+
+@keyframes rotate49 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(50) {
+  transform: rotatez(-300deg) rotatex(0deg); }
+  .el:nth-child(50)::after {
+    animation: rotate50 6s ease-in infinite alternate;
+    animation-delay: -10s; }
+
+@keyframes rotate50 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(51) {
+  transform: rotatez(-306deg) rotatex(0deg); }
+  .el:nth-child(51)::after {
+    animation: rotate51 6s ease-in infinite alternate;
+    animation-delay: -10.2s; }
+
+@keyframes rotate51 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(52) {
+  transform: rotatez(-312deg) rotatex(0deg); }
+  .el:nth-child(52)::after {
+    animation: rotate52 6s ease-in infinite alternate;
+    animation-delay: -10.4s; }
+
+@keyframes rotate52 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(53) {
+  transform: rotatez(-318deg) rotatex(0deg); }
+  .el:nth-child(53)::after {
+    animation: rotate53 6s ease-in infinite alternate;
+    animation-delay: -10.6s; }
+
+@keyframes rotate53 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(54) {
+  transform: rotatez(-324deg) rotatex(0deg); }
+  .el:nth-child(54)::after {
+    animation: rotate54 6s ease-in infinite alternate;
+    animation-delay: -10.8s; }
+
+@keyframes rotate54 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(55) {
+  transform: rotatez(-330deg) rotatex(0deg); }
+  .el:nth-child(55)::after {
+    animation: rotate55 6s ease-in infinite alternate;
+    animation-delay: -11s; }
+
+@keyframes rotate55 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(56) {
+  transform: rotatez(-336deg) rotatex(0deg); }
+  .el:nth-child(56)::after {
+    animation: rotate56 6s ease-in infinite alternate;
+    animation-delay: -11.2s; }
+
+@keyframes rotate56 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(57) {
+  transform: rotatez(-342deg) rotatex(0deg); }
+  .el:nth-child(57)::after {
+    animation: rotate57 6s ease-in infinite alternate;
+    animation-delay: -11.4s; }
+
+@keyframes rotate57 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(58) {
+  transform: rotatez(-348deg) rotatex(0deg); }
+  .el:nth-child(58)::after {
+    animation: rotate58 6s ease-in infinite alternate;
+    animation-delay: -11.6s; }
+
+@keyframes rotate58 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(59) {
+  transform: rotatez(-354deg) rotatex(0deg); }
+  .el:nth-child(59)::after {
+    animation: rotate59 6s ease-in infinite alternate;
+    animation-delay: -11.8s; }
+
+@keyframes rotate59 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+.el:nth-child(60) {
+  transform: rotatez(-360deg) rotatex(0deg); }
+  .el:nth-child(60)::after {
+    animation: rotate60 6s ease-in infinite alternate;
+    animation-delay: -12s; }
+
+@keyframes rotate60 {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(290deg); } }
+
+/*# sourceMappingURL=rotating-heart.css.map */

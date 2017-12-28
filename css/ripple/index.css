@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; }
+
+.dot-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  animation: ripple 2s ease-out 0.7s infinite; }
+
+.dot-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  animation: ripple 2s ease-out 1.4s infinite; }
+
+.dot-3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  animation: ripple 2s ease-out 2.1s infinite; }
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    transform: scale(8, 8);
+    background: #2196f3; } }
+
+/*# sourceMappingURL=index.css.map */

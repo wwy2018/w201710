@@ -2,12 +2,23 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import router from './router'
 import VueLazyload from 'vue-lazyload'
-
+import {DomPortal, InfiScroll} from 'wwy2017'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+import Store from './store'
+import VueRouter from 'vue-router'
+import Routers from './router/index'
+import Vuex from 'vuex'
+Vue.use(VueRouter)
+Vue.use(ElementUI)
+Vue.use(DomPortal)
+Vue.use(Vuex)
 /* eslint-disable */
 Vue.use(VueLazyload)
-
+Vue.use(InfiScroll)
+const router = new VueRouter(Routers)
+const store = new Vuex.Store(Store)
 Vue.config.productionTip = false
 // directive
 function getTarget (node = document.body) {
@@ -50,6 +61,7 @@ Vue.directive('transfer', {
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   template: '<App/>',
   components: { App }

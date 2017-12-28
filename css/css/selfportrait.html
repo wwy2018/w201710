@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: #333;
+      height: 100%;
+    }
+
+    .container {
+      width: 200px;
+      height: 200px;
+      left: calc(50% - 100px);
+      top: 40%;
+      position: absolute;
+    }
+
+    .head {
+      background-color: #fdd0c9;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      border-radius: 10px 10px 20px 20px;
+      box-shadow: inset -5px -5px 0 #fb7dae;
+    }
+
+    .head::before,
+    .head::after {
+      content: '';
+      position: absolute;
+      background-color: #fb7dae;
+      height: 10px;
+      width: 5px;
+      top: 15px;
+      left: 10px;
+      border-radius: 100%;
+    }
+
+    .head::after {
+      left: 30px;
+    }
+
+    .hair {
+      background-color: #ea2598;
+      width: 62px;
+      height: 50px;
+      position: absolute;
+      right: -6px;
+      top: -6px;
+      border-radius: 30%;
+    }
+
+    .computer {
+      background-color: #ea2598;
+      width: 80px;
+      height: 60px;
+      border-radius: 5px;
+      box-shadow: inset -5px 0 0 #fdd0c9;
+      position: absolute;
+      top: 30px;
+      left: 55px;
+    }
+
+    .computer::before {
+      content: '';
+      position: absolute;
+      background-color: #fdd0c9;
+      right: 5px;
+      width: 40px;
+      bottom: 0;
+      right: -35px;
+      border-radius: 5px;
+    }
+
+    .body {
+      position: absolute;
+      background-color: #fb7dae;
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      right: 0px;
+      top: 52px;
+      box-shadow: inset -5px -5px 0 #ea2598;
+    }
+
+    .body::before {
+      position: absolute;
+      content: '';
+      background-color: #fdd0c9;
+      width: 15px;
+      height: 20px;
+      border-radius: 5px;
+      left: 16px;
+      top: -10px;
+    }
+
+    .hand1,
+    .hand2 {
+      background-color: #fdd0c9;
+      width: 35px;
+      height: 10px;
+      border-radius: 5px;
+      position: absolute;
+      right: 10px;
+      top: 18px;
+    }
+
+    .hand1::before,
+    .hand2::before {
+      content: '';
+      position: absolute;
+      background-color: #fdd0c9;
+      height: 10px;
+      width: 10px;
+      border-radius: 5px;
+      top: 5px;
+    }
+
+    .hand2 {
+      right: 46px;
+      width: 15px;
+      animation: typing .4s ease-in-out infinite alternate;
+    }
+
+    .hand1 {
+      animation: typing .4s .4s ease-in-out infinite alternate;
+    }
+
+    @keyframes typing {
+      from {
+        transform: translateY(-5px);
+      }
+      to {
+        transform: translateY(5px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="body">
+      <div class="hand1"></div>
+      <div class="hand2"></div>
+    </div>
+    <div class="hair"></div>
+    <div class="head"></div>
+    <div class="computer"></div>
+  </div>
+</body>
+
+</html>
