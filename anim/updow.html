@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: green;
+      animation: updown 2s linear infinite;
+      margin-top: 100px;
+    }
+    @keyframes updown {
+      from{
+        transform: translateY(0)
+      }
+      50% {
+        transform: translateY(-10px)
+      }
+      100%{
+        transform: translateY(0)
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>

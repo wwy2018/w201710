@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+<script>
+var sun=new Image()
+var moon = new Image()
+var earth = new Image()
+var canvas = document.getElementById('canvas')
+var w = window.innerWidth
+var h = window.innerHeight
+canvas.width = w
+canvas.height = h
+var ctx = canvas.getContext('2d')
+sun.src = 'https://mdn.mozillademos.org/files/1456/Canvas_sun.png';
+moon.src = 'https://mdn.mozillademos.org/files/1443/Canvas_moon.png';
+earth.src = 'https://mdn.mozillademos.org/files/1429/Canvas_earth.png';
+// function draw () {
+//   ctx.clearRect(0, 0, w,h)
+//   ctx.save()
+//   ctx.translate(canvas.width/2,canvas.height/2);
+//   var time = new Date()
+// ctx.rotate(((2*Math.PI)/60)*time.getSeconds()+((2*Math.PI)/60000)*time.getMilliseconds());
+// ctx.drawImage(earth,-canvas.width/4,-canvas.height/4);
+// ctx.restore()
+// window.requestAnimationFrame(draw)
+// }
+// draw()
+function draw(){
+  ctx.globalCompositeOperation = 'destination-over'
+  ctx.clearRect(0,0,300,300)
+  ctx.fillStyle='rgba(0,0,0,0.4)'
+  ctx.strokeStyle='rgba(0,153,255,0.4)'
+  ctx.save()
+  ctx.translate(150,150)
+  // earth
+  var time = new Date()
+  ctx.rotate(((2*Math.PI)/60)*time.getSeconds()+((2*Math.PI)/60000)*time.getMilliseconds())
+  ctx.translate(105,0)
+  // ctx.fillRect(0,-12,50,24)
+  ctx.drawImage(earth, -12,-12)
+  // moon
+  ctx.save()
+  ctx.rotate(((2*Math.PI)/60)*time.getSeconds()+((2*Math.PI)/60000)*time.getMilliseconds())
+  ctx.translate(0,28.5)
+  ctx.drawImage(moon, -3.5, -3.5)
+  ctx.restore()
+  ctx.restore()
+  ctx.beginPath()
+  ctx.arc(150,150,105,0,Math.PI*2,false)
+  ctx.stroke()
+  ctx.drawImage(sun,0,0,300,300)
+  window.requestAnimationFrame(draw)
+}
+draw()
+</script>
+</body>
+</html>

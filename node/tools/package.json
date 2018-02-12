@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ffmpeg": "^0.0.4",
+    "gm": "^1.23.1",
     "node-xlsx": "^0.11.2"
   }
 }

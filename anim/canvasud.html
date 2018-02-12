@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script>
+var canvas = document.getElementById('canvas')
+var innerHeight = window.innerHeight
+var innerWidth = window.innerWidth
+canvas.width = innerWidth
+canvas.height = innerHeight
+var ctx = canvas.getContext('2d')
+var img = new Image()
+img.src = './images/1.png'
+function Circle(x,y){
+  this.x=x
+  this.y=y
+  this.draw=function(){
+    ctx.drawImage(img, this.x, this.y, '24', '24')
+  }
+  let dy = 0
+  this.update=function(){
+    if (this.y > '300' || this.y - 100 < 0) {
+      dy-=1
+    } else {
+      dy+=1
+    }
+    console.log('ddy', dy)
+    this.y += dy*2
+    console.log('this.y', this.y)
+    this.draw()
+  }
+}
+var circle = new Circle(100, 100)
+
+function animate () {
+  requestAnimationFrame(animate)
+  ctx.clearRect(0, 0, innerWidth, innerHeight)
+  circle.update()
+}
+animate()
+</script>
+</body>
+</html>

@@ -10,6 +10,8 @@ import Store from './store'
 import VueRouter from 'vue-router'
 import Routers from './router/index'
 import Vuex from 'vuex'
+import 'font-awesome/css/font-awesome.min.css'
+
 Vue.use(VueRouter)
 Vue.use(ElementUI)
 Vue.use(DomPortal)

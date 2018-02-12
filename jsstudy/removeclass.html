@@ -8,10 +8,24 @@
 </head>
 <body>
   <div class="aa" id="a">aaaaa</div>
+  <div class="a b c" id="b">bbbb</div>
   <script>
     let a = document.getElementById('a')
     a.className = ''
     console.log(a.className)
+    // addClass
+    let b = document.getElementById('b')
+    let classname = b.className
+    classname += ' d e'
+    b.className = classname
+    console.log(b.className)
+    // removeClass
+    classname = classname.replace('e', '')
+    b.className = classname
+    console.log('r', b.className)
+    b.classList.add('h')
+    console.log('h', b.classList)
+    b.classList.remove('a')
   </script>
 </body>
 </html>
