@@ -29,6 +29,23 @@ let ha=tounicode('汉字')
 console.log('ha', ha)
 let zi = tohanzi(ha)
 console.log('zi', zi)
+var Unicode = {
+  stringfy: function (str) {
+    var res = [], len = str.length
+    for (var i = 0; i< len ; ++i) {
+      res[i] = ('00' + str.charCodeAt(i).toString(16)).slice(-4)
+    }
+    return str ? '\\u' + res.join('\\u') : ''
+  },
+  parse: function (str) {
+    str = str.replace(/\\/g, '%')
+    return unescape(str)
+  }
+}
+let a = Unicode.stringfy('a')
+console.log('a', a)
+let au = Unicode.parse(a)
+console.log('au', au)
 </script>
 </body>
 </html>

@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="add-img-ctrl" bindtap="uploadImage">
+    添加
+  </view>
+  <form bindsubmit="upload" report-submit="true">
+    <button formType="submit" style="">
+      上传
+    </button>
+  </form>
+  <form bindsubmit="confirm" report-submit="true">
+    <textarea placeholder="form 中的 textarea" name="textarea" bindblur="blur"/>
+    <button formType="submit" style="">
+      存储到数据库
+    </button>
+  </form>
+  <image src="{{tempImg}}" />
+  <image src="{{imgResult}}" />
+</view>
